@@ -3,42 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#081225">
-<title>VIRAT Digital Ecosystem</title>
+<meta name="theme-color" content="#070b18">
+<title>VIRAT | Digital Ecosystem</title>
 <link rel="stylesheet" href="virat.css">
 </head>
 <body>
 <header class="top">
-  <a class="brand" href="virat.html"><span class="logo">V</span>
-    <span>VIRAT <small>Digital Ecosystem</small></span>
-  </a>
-  <button id="theme" aria-label="Toggle theme">☀️ / 🌙</button>
+  <a class="brand" href="virat.html"><span class="logo">V</span><span>VIRAT<small>DIGITAL ECOSYSTEM</small></span></a>
+  <button id="theme" class="theme" aria-label="Theme बदलें">☀️</button>
 </header>
-<main class="wrap">
-  <section class="hero">
-    <span class="tag">ONE PLATFORM · ENDLESS POSSIBILITIES</span>
-    <h1>Welcome to <span>VIRAT</span></h1>
-    <p>Digital services, learning, opportunities and productivity — all in one place.</p>
-    <input id="search" type="search" placeholder="Search 39 services..." aria-label="Search services">
-    <div class="quick">
-      <a href="#services">Explore Services ↓</a>
-      <a href="#instant-pay">INSTANT PAY Demo</a>
-    </div>
-  </section>
-  <section id="services">
-    <h2>Explore the Ecosystem</h2>
-    <p class="muted">Choose a service or search by name or category.</p>
-    <div id="grid" class="grid"></div>
-    <p id="empty" hidden>No matching services found.</p>
-  </section>
-  <section id="instant-pay" class="pay">
-    <h2>⚡ INSTANT PAY</h2>
-    <p>Demo interface only. No real money is transferred.</p>
-    <button id="demoPay">Create Demo Transaction</button>
-    <p id="paymentResult" role="status"></p>
-  </section>
-  <footer>© <span id="year"></span> VIRAT Digital Ecosystem · One Platform. Endless Possibilities.</footer>
+
+<main>
+<section class="hero">
+  <div class="eyebrow">✦ ONE PLATFORM · MANY POSSIBILITIES</div>
+  <h1>Your Digital World,<br><span>One VIRAT Platform.</span></h1>
+  <p>काम, क्रिएटिविटी, टेक्नोलॉजी और डिजिटल सेवाएँ — सब एक जगह।</p>
+  <div class="hero-actions">
+    <a href="#services" class="primary">Explore Services ↗</a>
+    <a href="#about" class="secondary">हमारे बारे में</a>
+  </div>
+  <div class="orbit"><div class="orbit-core">V</div><i>✦</i><b>✧</b><em>+</em></div>
+  <div class="stats"><div><strong>39+</strong><span>Service Ideas</span></div><div><strong>01</strong><span>Unified Platform</span></div><div><strong>24/7</strong><span>Digital Access</span></div></div>
+</section>
+
+<section id="services" class="services">
+  <div class="section-head"><div><span class="eyebrow">THE ECOSYSTEM</span><h2>Explore <span>Services</span></h2></div><span id="count" class="count">39 SERVICES</span></div>
+  <div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search services..." autocomplete="off"><button id="clear">✕</button></div>
+  <div id="filters" class="filters"></div>
+  <div id="grid" class="grid"></div>
+  <p id="empty" hidden>कोई service नहीं मिली। दूसरा नाम खोजें।</p>
+</section>
+
+<section id="about" class="about"><span class="eyebrow">BUILT FOR YOUR NEXT STEP</span><h2>बड़े सपने। <span>एक डिजिटल शुरुआत।</span></h2><p>VIRAT एक ऐसा डिजिटल इकोसिस्टम है जहाँ उपयोगी टूल्स और ऑनलाइन सेवाओं को एक आसान अनुभव में लाने का लक्ष्य है।</p><a class="primary" href="#services">Services देखें ↗</a></section>
 </main>
+<footer><a class="brand" href="virat.html"><span class="logo">V</span><span>VIRAT<small>DIGITAL ECOSYSTEM</small></span></a><span>Designed for the digital future ✦</span><a href="index.html">← AI Fusion</a></footer>
 <script src="virat.js"></script>
 </body>
 </html>
