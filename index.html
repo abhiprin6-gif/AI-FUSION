@@ -1,166 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI FUSION - India's AI Powerhouse</title>
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        :root { --primary: #FF9933; --white: #FFFFFF; --green: #138808; --dark: #030306; --card-glass: rgba(18, 18, 28, 0.75); --border: rgba(255, 153, 51, 0.35); }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background-color: var(--dark); color: var(--white); font-family: 'Plus Jakarta Sans', sans-serif; min-height: 100vh; overflow-x: hidden; display: flex; flex-direction: column; align-items: center; padding-bottom: 50px; }
-        .bg-wallpaper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(255, 153, 51, 0.35) 0%, rgba(255, 255, 255, 0.12) 50%, rgba(19, 136, 8, 0.35) 100%), radial-gradient(circle at 70% 20%, rgba(255, 153, 51, 0.45) 0%, transparent 60%), url('https://images.unsplash.com/photo-1532375810709-75b1da00537c?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat; background-blend-mode: overlay, normal, overlay; filter: brightness(1.1) contrast(1.05); z-index: -1; pointer-events: none; }
-        header { width: 100%; padding: 14px 30px; display: flex; justify-content: space-between; align-items: center; background: rgba(3, 3, 8, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
-        .header-left { display: flex; align-items: center; gap: 15px; }
-        .menu-btn { font-size: 1.4rem; color: #fff; cursor: pointer; }
-        .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .flag-icon { width: 26px; height: 18px; border-radius: 3px; background: linear-gradient(to bottom, #FF9933 33%, #FFFFFF 33%, #FFFFFF 66%, #138808 66%); display: inline-block; border: 1px solid rgba(255,255,255,0.3); }
-        .logo-text-box h2 { font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 800; color: #fff; }
-        .nav-links { display: flex; gap: 25px; align-items: center; }
-        .nav-links a { color: #d0d0e0; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
-        .premium-btn { background: linear-gradient(135deg, #FF9933, #FFD700); color: #000; padding: 7px 16px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; text-decoration: none; }
-
-        .drawer-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(5px); z-index: 998; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
-        .drawer-overlay.active { opacity: 1; visibility: visible; }
-        .drawer-menu { position: fixed; top: 0; left: -300px; width: 280px; height: 100%; background: rgba(10, 10, 18, 0.95); border-right: 1px solid var(--border); backdrop-filter: blur(25px); z-index: 999; transition: all 0.3s ease; display: flex; flex-direction: column; padding: 25px 20px; }
-        .drawer-menu.active { left: 0; }
-        .drawer-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 18px; margin-bottom: 20px; }
-        .drawer-links { display: flex; flex-direction: column; gap: 12px; }
-        .drawer-link { display: flex; align-items: center; gap: 14px; padding: 12px 15px; color: #e0e0e0; text-decoration: none; border-radius: 12px; font-weight: 600; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); }
-
-        .hero-section { width: 92%; max-width: 1200px; display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 30px; padding: 40px 0 20px 0; }
-        @media(max-width: 900px) { .hero-section { grid-template-columns: 1fr; text-align: center; } .nav-links { display: none; } }
-        .hero-title { font-family: 'Cinzel', serif; font-size: 3rem; font-weight: 900; background: linear-gradient(to right, #FF9933, #FFFFFF, #138808); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        .google-search-bar { display: flex; align-items: center; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 30px; padding: 10px 18px; backdrop-filter: blur(15px); margin: 20px 0; max-width: 520px; }
-        .google-search-bar input { width: 100%; background: transparent; border: none; outline: none; color: #fff; padding: 0 10px; }
-
-        .earth-container { width: 320px; height: 320px; margin: 0 auto; position: relative; display: flex; justify-content: center; align-items: center; }
-        .earth-globe { width: 280px; height: 280px; border-radius: 50%; background: url('https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73909/world.topo.bathy.200412.3x5400x2700.jpg') repeat-x center/cover; box-shadow: inset -40px -40px 80px rgba(0,0,0,0.95), 0 0 100px rgba(255,153,51,0.85); animation: rotateSlowEarth 55s linear infinite; }
-        @keyframes rotateSlowEarth { 0% { background-position: 0 0; } 100% { background-position: 5400px 0; } }
-        .globe-logo-v { position: absolute; font-family: 'Audiowide', cursive; font-size: 3.5rem; background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 50%, #138808 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-        .virat-ai-container { width: 92%; max-width: 1200px; margin: 30px auto; background: rgba(15, 15, 25, 0.85); border: 2px solid var(--primary); border-radius: 20px; padding: 25px; backdrop-filter: blur(25px); }
-        .virat-chat-box { background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 15px; margin: 15px 0; color: #d0d0e0; }
-        .virat-input-wrapper { display: flex; gap: 10px; }
-        .virat-input { flex: 1; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 153, 51, 0.4); border-radius: 10px; padding: 10px 15px; color: #fff; outline: none; }
-        .virat-send-btn { background: linear-gradient(135deg, #FF9933, #138808); color: #fff; border: none; border-radius: 10px; padding: 0 20px; font-weight: 700; cursor: pointer; }
-
-        .filter-tabs { display: flex; justify-content: center; gap: 10px; margin: 20px 0; flex-wrap: wrap; width: 92%; max-width: 1200px; }
-        .filter-btn { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); color: #ccc; padding: 8px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: 0.2s; }
-        .filter-btn.active, .filter-btn:hover { background: var(--primary); color: #000; border-color: var(--primary); }
-
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; width: 92%; max-width: 1200px; margin: 20px auto; }
-        .tool-card { background: var(--card-glass); border: 1px solid var(--border); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
-        .tool-btn { background: linear-gradient(135deg, #FF9933, #138808); color: #fff; text-decoration: none; text-align: center; padding: 8px; border-radius: 8px; margin-top: 10px; font-weight: 600; }
-        
-        .sandbox-container { width: 92%; max-width: 1200px; margin: 30px auto; background: rgba(10, 10, 20, 0.9); border: 1px solid var(--border); border-radius: 20px; padding: 25px; backdrop-filter: blur(25px); }
-        .sandbox-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .sandbox-header h3 { font-family: 'Cinzel', serif; font-size: 1.4rem; color: #fff; }
-        .sandbox-preview { width: 100%; height: 250px; background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #888; font-size: 0.95rem; }
-
-        footer { margin-top: 40px; padding: 20px; font-size: 0.85rem; color: #a0a0b5; border-top: 1px solid var(--border); width: 100%; text-align: center; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#030812">
+<meta name="description" content="AI Fusion — Bharat ka AI Platform. Image, voice, code, chat aur video tools.">
+<title>AI FUSION | Bharat ka AI Platform</title>
+<style>
+:root{--bg:#030812;--panel:#071421;--green:#00ff83;--saffron:#ff941c;--blue:#28baff;--white:#f4f8ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,a{-webkit-tap-highlight-color:transparent}
+.container{width:min(1200px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#030812eF;border-bottom:1px solid #ffffff20;backdrop-filter:blur(18px)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:24px;line-height:1.05}
+.flag{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(#ff762d 0 33%,#fff 33% 66%,#079b4b 66%);box-shadow:0 0 22px #ff941c40;font-size:19px}
+.brand small{display:block;font-size:11px;font-weight:500;letter-spacing:.5px;margin-top:5px;color:#c6d4e8}
+nav{display:flex;align-items:center;gap:clamp(14px,3vw,38px);font-size:14px}
+nav a{padding:10px 0;color:#e4eaf4}
+nav a:hover,nav a.active{color:var(--green)}
+.premium{border:1px solid #ffc24d;border-radius:30px;padding:12px 20px;white-space:nowrap;box-shadow:0 0 20px #ff9b1630}
+.hero{position:relative;isolation:isolate;padding:50px 0 24px;overflow:hidden}
+.tricolor{position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 70% 12%,#ff790a75,transparent 38%),radial-gradient(ellipse at 80% 36%,#ffffff30,transparent 30%),radial-gradient(ellipse at 70% 60%,#00f56a45,transparent 42%),linear-gradient(120deg,#030812,#071321 60%,#03130f)}
+.tricolor:before,.tricolor:after{content:"";position:absolute;left:-10%;width:120%;height:170px;border-radius:50%;filter:blur(28px);transform:rotate(-8deg)}
+.tricolor:before{top:40px;background:linear-gradient(180deg,#ff79004d,#ffb01c22,transparent)}
+.tricolor:after{top:220px;background:linear-gradient(180deg,#ffffff25,#00e86a28,transparent)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:25px;min-height:420px}
+.pill{display:inline-block;padding:10px 15px;border:1px solid #ff9a3a88;border-radius:30px;background:#090e1899;font-size:13px;margin-bottom:18px}
+h1{font-size:clamp(42px,6vw,76px);line-height:.99;letter-spacing:-2px;margin:0 0 14px;font-weight:900}
+.saffron{color:#ffb02e}.india-green{color:#8fffb2}
+.tagline{font-size:clamp(21px,3vw,34px);font-weight:800;margin:0 0 13px}
+.intro{color:#d0dced;line-height:1.7;max-width:490px;margin:0 0 15px}
+.perks{font-size:14px;letter-spacing:.3px;color:#e4edf8}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:27px}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;border-radius:30px;padding:14px 23px;font-weight:800;font-size:14px;border:1px solid #ffffff35;transition:.2s}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.13)}
+.btn-main{background:linear-gradient(100deg,#00dc70,#b7e64a,#ff920b);color:#07110b;border:0;box-shadow:0 0 24px #00d97838}
+.btn-outline{background:#071421a8}
+.visual{height:390px;position:relative;display:grid;place-items:center}
+.chakra{position:absolute;width:min(78%,300px);aspect-ratio:1;border:10px solid #174bc9;border-radius:50%;box-shadow:0 0 22px #286aff75,inset 0 0 20px #286aff45;display:grid;place-items:center;animation:rotate 55s linear infinite}
+.chakra:before{content:"";position:absolute;width:76%;height:76%;border:5px solid #174bc9;border-radius:50%}
+.spokes{position:absolute;inset:0;border-radius:50%;background:repeating-conic-gradient(from 0deg,#153da8 0deg 1.8deg,transparent 1.8deg 15deg);mask:radial-gradient(circle,transparent 0 12%,#000 13% 100%);-webkit-mask:radial-gradient(circle,transparent 0 12%,#000 13% 100%)}
+.ai-orb{z-index:2;position:relative;width:min(68%,245px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 25%,#40dfff,#0751bb 26%,#03102b 64%,#020611 75%);border:2px solid #3dcaff;box-shadow:0 0 28px #008dff, inset 0 0 28px #008dff75}
+.ai-orb:before,.ai-orb:after{content:"";position:absolute;inset:-13px;border:7px solid transparent;border-top-color:#ff8d16;border-bottom-color:#00ff84;border-radius:50%;transform:rotate(-28deg);filter:drop-shadow(0 0 9px #ff9b28)}
+.ai-orb:after{inset:-24px;border-width:5px;border-top-color:#ffffff;border-bottom-color:#ff9a17;transform:rotate(35deg)}
+.ai-text{font-size:clamp(55px,8vw,92px);font-weight:900;color:#d8f7ff;text-shadow:0 0 12px #00bfff,0 0 30px #009dff}
+.jai{position:absolute;right:0;bottom:35px;font-family:cursive;font-size:30px;line-height:1.05;transform:rotate(-9deg);color:white}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#04121ddf;border:1px solid #00edb0;border-radius:22px;padding:20px 10px;box-shadow:0 0 24px #00a78c20}
+.stat{display:flex;justify-content:center;align-items:center;gap:13px;padding:5px 12px;border-right:1px solid #ffffff22}
+.stat:last-child{border:0}
+.stat-icon{width:52px;height:52px;flex-shrink:0;border:1px solid var(--blue);border-radius:50%;display:grid;place-items:center;font-size:24px;box-shadow:0 0 16px #00baff24}
+.stat strong{display:block;font-size:21px}.stat span{font-size:13px;color:#c9d5e5}
+section{padding:42px 0}
+.section-title{text-align:center;font-size:clamp(28px,4vw,40px);margin:0 0 8px;font-weight:900}
+.section-sub{text-align:center;color:#c6d5e7;margin:0 auto 28px;line-height:1.6}
+.flag-line{color:#ffb52c}
+.tools{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.tool-card{min-width:0;padding:21px 17px 17px;border-radius:17px;background:linear-gradient(145deg,#111b2b,#050a14 75%);border:1px solid var(--glow);box-shadow:0 0 17px color-mix(in srgb,var(--glow) 30%,transparent);display:flex;flex-direction:column;min-height:222px}
+.tool-icon{width:53px;height:53px;border:1px solid var(--glow);border-radius:50%;display:grid;place-items:center;font-size:25px;margin-bottom:15px;color:var(--glow);box-shadow:0 0 18px color-mix(in srgb,var(--glow) 40%,transparent)}
+.tool-card h3{font-size:16px;margin:0 0 10px}
+.tool-card p{font-size:13px;line-height:1.55;color:#c9d5e6;margin:0 0 16px;flex:1}
+.try{display:block;text-align:center;border:1px solid var(--glow);border-radius:30px;padding:9px 8px;font-size:13px;background:color-mix(in srgb,var(--glow) 12%,transparent)}
+.features{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:55px;padding-top:45px;padding-bottom:55px}
+.why-pill{display:inline-block;padding:9px 13px;border:1px solid #00d78b;border-radius:25px;background:#00a85b20;font-size:13px;margin-bottom:10px}
+.features h2{font-size:clamp(29px,4vw,39px);line-height:1.1;margin:0 0 15px}
+.features p{color:#cbd7e6;line-height:1.65;max-width:440px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 24px;font-size:13px}
+.checks span:before{content:"✓";display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#00c86b;color:white;font-weight:900;margin-right:9px}
+.feature-list{border:1px solid #14344b;border-radius:17px;padding:8px 20px;background:#06111ce0}
+.feature-item{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid #ffffff13}
+.feature-item:last-child{border:0}
+.feature-icon{width:52px;height:52px;flex-shrink:0;border:1px solid var(--c);border-radius:50%;display:grid;place-items:center;font-size:23px;box-shadow:0 0 18px color-mix(in srgb,var(--c) 30%,transparent)}
+.feature-item strong{display:block;margin-bottom:5px}.feature-item small{color:#c6d4e4}
+footer{border-top:1px solid #ff8e2a;position:relative;background:#020812;padding:25px 0}
+.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer-links,.social{display:flex;gap:19px;align-items:center;flex-wrap:wrap;font-size:13px;color:#d0dbea}
+.social a:hover,.footer-links a:hover{color:var(--green)}
+.footer-brand{font-size:19px}
+.note{font-size:11px;color:#8294aa;text-align:center;margin-top:18px}
+@keyframes rotate{to{transform:rotate(360deg)}}
+@media(max-width:850px){nav{gap:13px}nav a{font-size:12px}.premium{padding:10px 13px}.hero-grid{min-height:360px}.visual{height:320px}.tools{grid-template-columns:repeat(3,minmax(0,1fr))}.stat{gap:8px;padding:4px}.stat-icon{width:42px;height:42px}.stat strong{font-size:18px}.features{gap:25px}}
+@media(max-width:600px){.nav{min-height:66px;flex-wrap:wrap;padding:11px 0}.brand{font-size:20px}.flag{width:36px;height:36px}nav{order:3;width:100%;justify-content:space-between;padding:0 0 4px}nav a{font-size:12px}.premium{font-size:12px}.hero{padding-top:30px}.hero-grid{grid-template-columns:1fr;gap:0}.hero-copy{padding-top:10px}.visual{height:285px;order:2}.chakra{width:245px}.ai-orb{width:190px}.jai{right:5px;bottom:18px;font-size:24px}.stats{grid-template-columns:repeat(2,1fr);gap:14px;padding:16px 8px}.stat{justify-content:flex-start;border-right:0;padding:5px 8px}.stat:nth-child(odd){border-right:1px solid #ffffff22}.stat-icon{width:39px;height:39px;font-size:19px}.stat strong{font-size:17px}.stat span{font-size:11px}.tools{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tool-card{padding:16px 13px;min-height:215px}.tool-card h3{font-size:14px}.tool-card p{font-size:12px}.features{grid-template-columns:1fr;gap:25px}.checks{font-size:12px;gap:12px}.feature-list{padding:7px 15px}.footer-row{justify-content:center;text-align:center}.footer-links{justify-content:center}.section-title{line-height:1.15}section{padding:32px 0}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
+</style>
 </head>
 <body>
-    <div class="bg-wallpaper"></div>
-    <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+<header>
+<div class="container nav">
+<a class="brand" href="#home"><span class="flag">🇮🇳</span><span>AI FUSION<small>India's AI Powerhouse</small></span></a>
+<nav aria-label="Main navigation">
+<a class="active" href="#home">Home</a><a href="#tools">Tools</a><a href="#features">Features</a><a href="#about">About</a><a href="#contact">Contact</a>
+</nav>
+<a class="premium" href="#tools">👑 Premium</a>
+</div>
+</header>
 
-    <div class="drawer-menu" id="drawerMenu">
-        <div class="drawer-header">
-            <div class="logo-container"><div class="flag-icon"></div><h2>AI FUSION</h2></div>
-            <i class="fa-solid fa-xmark" onclick="toggleDrawer()" style="cursor:pointer;"></i>
-        </div>
-        <div class="drawer-links">
-            <a href="#" class="drawer-link"><i class="fa-solid fa-house" style="color:#FF9933;"></i> Home</a>
-            <a href="#viratAiSection" class="drawer-link" onclick="toggleDrawer()"><i class="fa-solid fa-brain" style="color:#FF9933;"></i> Virat AI</a>
-            <a href="#sandbox" class="drawer-link" onclick="toggleDrawer()"><i class="fa-solid fa-code" style="color:#38bdf8;"></i> App Canvas</a>
-            <a href="#tools" class="drawer-link" onclick="toggleDrawer()"><i class="fa-solid fa-bolt" style="color:#f59e0b;"></i> AI Tools</a>
-        </div>
-    </div>
+<main id="home">
+<div class="hero">
+<div class="tricolor"></div>
+<div class="container hero-grid">
+<div class="hero-copy">
+<div class="pill">🔥 &nbsp;Made in India&nbsp; • &nbsp;Powered by AI</div>
+<h1><span class="saffron">Bharat</span> <span class="india-green">ka</span><br>AI Platform</h1>
+<p class="tagline">Soch Se Sach Tak</p>
+<p class="intro">AI Fusion – aapke har idea ko reality me badalne ke liye ek powerful AI tools ka platform.</p>
+<div class="perks">Fast <span class="saffron">•</span> Free <span class="india-green">•</span> Future Ready</div>
+<div class="actions"><a class="btn btn-main" href="#tools">🚀 &nbsp;Get Started&nbsp; →</a><a class="btn btn-outline" href="#tools">▦ &nbsp;Explore Tools</a></div>
+</div>
+<div class="visual" aria-label="Ashoka Chakra and AI orb illustration">
+<div class="chakra"><div class="spokes"></div></div>
+<div class="ai-orb"><span class="ai-text">AI</span></div>
+<div class="jai">Jai<br>Hind 🇮🇳</div>
+</div>
+</div>
+<div class="container stats">
+<div class="stat"><div class="stat-icon" style="color:#ffbc22;border-color:#ffbc22">ϟ</div><div><strong>50+</strong><span>AI Tools</span></div></div>
+<div class="stat"><div class="stat-icon">♟</div><div><strong>100K+</strong><span>Happy Users</span></div></div>
+<div class="stat"><div class="stat-icon" style="color:#70ffd0;border-color:#00efaa">♢</div><div><strong>99.9%</strong><span>Uptime</span></div></div>
+<div class="stat"><div class="stat-icon" style="color:#ffbc22;border-color:#ffbc22">★</div><div><strong>Free &amp; Premium</strong><span>Both Available</span></div></div>
+</div>
+</div>
 
-    <header>
-        <div class="header-left">
-            <i class="fa-solid fa-bars menu-btn" onclick="toggleDrawer()"></i>
-            <a href="#" class="logo-container"><div class="flag-icon"></div><h2>AI FUSION</h2></a>
-        </div>
-        <nav class="nav-links"><a href="#">Home</a><a href="#viratAiSection">Virat AI</a><a href="#sandbox">Canvas</a><a href="#tools">Tools</a></nav>
-        <a href="#" class="premium-btn"><i class="fa-solid fa-crown"></i> Premium</a>
-    </header>
+<section id="tools">
+<div class="container">
+<h2 class="section-title"><span class="flag-line">━━ 🇮🇳 ━━</span> Popular <span class="saffron">AI</span> Tools <span class="flag-line">━━ 🇮🇳 ━━</span></h2>
+<p class="section-sub">Powerful tools for your creativity, productivity and more.</p>
+<div class="tools">
+<article class="tool-card" style="--glow:#ff9b24"><div class="tool-icon">▧</div><h3>Image Generator</h3><p>Create stunning images with AI.</p><a class="try" href="#contact">Try Now &nbsp; →</a></article>
+<article class="tool-card" style="--glow:#22baff"><div class="tool-icon">🎙</div><h3>Text to Speech</h3><p>Convert text to realistic voice.</p><a class="try" href="#contact">Try Now &nbsp; →</a></article>
+<article class="tool-card" style="--glow:#d44cff"><div class="tool-icon">〈/〉</div><h3>Code Generator</h3><p>Generate clean code with AI.</p><a class="try" href="#contact">Try Now &nbsp; →</a></article>
+<article class="tool-card" style="--glow:#00fa91"><div class="tool-icon">☏</div><h3>Chat with AI</h3><p>Get instant answers and ideas.</p><a class="try" href="#contact">Try Now &nbsp; →</a></article>
+<article class="tool-card" style="--glow:#ff3d88"><div class="tool-icon">▷</div><h3>Video Generator</h3><p>Turn your ideas into videos.</p><a class="try" href="#contact">Try Now &nbsp; →</a></article>
+</div>
+</div>
+</section>
 
-    <main class="hero-section">
-        <div>
-            <h1 class="hero-title">India ka AI Platform</h1>
-            <p style="margin-top:10px; color:#c0c0d5;">AI Fusion – aapke har idea ko reality me badalne ke liye ek powerful AI tools ka platform.</p>
-            <form class="google-search-bar" onsubmit="performSearch(event)">
-                <i class="fa-solid fa-magnifying-glass" style="color:#4285F4;"></i>
-                <input type="text" id="searchInput" placeholder="Search Google..." autocomplete="off" />
-                <i class="fa-solid fa-microphone" style="color:#EA4335;"></i>
-            </form>
-        </div>
-        <div class="earth-container"><div class="earth-globe"></div><div class="globe-logo-v">V</div></div>
-    </main>
+<section id="features">
+<div class="container features">
+<div id="about">
+<div class="why-pill">⭐ &nbsp;Why Choose Us?</div>
+<h2>Next-Gen AI Tools<br>For <span class="india-green">Everyone</span></h2>
+<p>AI Fusion is designed to make AI simple, fast and accessible. Whether you are a student, creator, developer or business owner — we have tools for you.</p>
+<div class="checks"><span>Easy to Use</span><span>Mobile Friendly</span><span>No Login Required</span><span>100% Free (Basic Tools)</span></div>
+<a class="btn btn-main" href="#tools">Start Exploring &nbsp; →</a>
+</div>
+<div class="feature-list">
+<div class="feature-item"><div class="feature-icon" style="--c:#d34cff">▣</div><div><strong>Futuristic UI</strong><small>Modern &amp; Clean Design</small></div></div>
+<div class="feature-item"><div class="feature-icon" style="--c:#24baff">ϟ</div><div><strong>Fast Performance</strong><small>Lightning Speed</small></div></div>
+<div class="feature-item"><div class="feature-icon" style="--c:#00f58b">⬡</div><div><strong>Secure &amp; Private</strong><small>Your Data, Our Priority</small></div></div>
+<div class="feature-item"><div class="feature-icon" style="--c:#ff9c21">🇮🇳</div><div><strong>Made in India</strong><small>For a Better Tomorrow</small></div></div>
+</div>
+</div>
+</section>
+</main>
 
-    <div class="virat-ai-container" id="viratAiSection">
-        <h3>VIRAT AI — Flagship Assistant</h3>
-        <div class="virat-chat-box" id="viratResponse">Namaste! Main Virat AI hoon. Bataiye aaj main aapki kya sahayata karoon?</div>
-        <div class="virat-input-wrapper">
-            <input type="text" id="viratInput" class="virat-input" placeholder="Ask Virat AI anything..." autocomplete="off">
-            <button class="virat-send-btn" onclick="askViratAI()">Ask AI</button>
-        </div>
-    </div>
-
-    <div class="sandbox-container" id="sandbox">
-        <div class="sandbox-header">
-            <h3><i class="fa-solid fa-laptop-code" style="color:var(--primary);"></i> Web App Sandbox Canvas</h3>
-            <span style="font-size:0.8rem; color:#aaa;">Powered by Web Canvas Engine</span>
-        </div>
-        <div class="sandbox-preview" id="sandboxPreview">
-            Live Web App Preview Space Ready
-        </div>
-    </div>
-
-    <h2 style="text-align:center; font-family:'Cinzel', serif;" id="tools">AI Tool Directory</h2>
-    
-    <div class="filter-tabs">
-        <button class="filter-btn active" onclick="filterCategory('all', this)">All Tools</button>
-        <button class="filter-btn" onclick="filterCategory('chat', this)">Chat & LLM</button>
-        <button class="filter-btn" onclick="filterCategory('art', this)">Art & Image</button>
-        <button class="filter-btn" onclick="filterCategory('code', this)">Coding</button>
-    </div>
-
-    <div class="tools-grid" id="toolsGrid">
-        <div class="tool-card" data-category="chat"><h3>ChatGPT</h3><p>Advanced conversational intelligence for coding and reasoning.</p><a href="https://chatgpt.com" target="_blank" class="tool-btn">Launch</a></div>
-        <div class="tool-card" data-category="chat"><h3>Claude AI</h3><p>Nuanced writing and complex logic analysis.</p><a href="https://claude.ai" target="_blank" class="tool-btn">Launch</a></div>
-        <div class="tool-card" data-category="chat"><h3>Google Gemini</h3><p>Real-time web search and vision processing.</p><a href="https://gemini.google.com" target="_blank" class="tool-btn">Launch</a></div>
-        <div class="tool-card" data-category="art"><h3>Midjourney</h3><p>Cinematic art generation and photo rendering.</p><a href="https://midjourney.com" target="_blank" class="tool-btn">Launch</a></div>
-        <div class="tool-card" data-category="code"><h3>Bolt.new</h3><p>Full-stack web application builder in-browser.</p><a href="https://bolt.new" target="_blank" class="tool-btn">Launch</a></div>
-    </div>
-
-    <footer>AI FUSION • India's AI Powerhouse | Jai Hind 🇮🇳</footer>
-
-    <script>
-        function toggleDrawer() { document.getElementById('drawerMenu').classList.toggle('active'); document.getElementById('drawerOverlay').classList.toggle('active'); }
-        function performSearch(e) { e.preventDefault(); const q = document.getElementById('searchInput').value; if(q) window.open('https://www.google.com/search?q=' + encodeURIComponent(q), '_blank'); }
-        function askViratAI() {
-            const q = document.getElementById('viratInput').value;
-            if(q) {
-                document.getElementById('viratResponse').innerHTML = `<b>Sawaal:</b> ${q}<br><br><b>Virat AI:</b> Query successfully processed via Sovereign Neural Network!`;
-                document.getElementById('viratInput').value = '';
-            }
-        }
-        function filterCategory(cat, btn) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            document.querySelectorAll('.tool-card').forEach(card => {
-                if(cat === 'all' || card.getAttribute('data-category') === cat) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
+<footer id="contact">
+<div class="container footer-row">
+<a class="brand footer-brand" href="#home"><span class="flag">🇮🇳</span><span>AI FUSION<small>India's AI Powerhouse</small></span></a>
+<div class="footer-links"><a href="#home">Home</a><a href="#tools">Tools</a><a href="#features">Features</a><a href="#about">About</a><a href="mailto:hello@aifusion.example">Contact</a></div>
+<div class="social"><a href="#contact" aria-label="YouTube">▶</a><a href="#contact" aria-label="Telegram">➤</a><a href="#contact" aria-label="Twitter">♥</a><a href="https://github.com/abhiprin6-gif/ai-fusion" aria-label="GitHub">GitHub</a><span>Jai Hind 🇮🇳</span></div>
+</div>
+<div class="container note">AI FUSION • Made with Indian Spirit</div>
+</footer>
 </body>
 </html>
