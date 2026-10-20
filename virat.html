@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#081225">
+<title>VIRAT Digital Ecosystem</title>
+<link rel="stylesheet" href="virat.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="virat.html"><span class="logo">V</span>
+    <span>VIRAT <small>Digital Ecosystem</small></span>
+  </a>
+  <button id="theme" aria-label="Toggle theme">☀️ / 🌙</button>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <span class="tag">ONE PLATFORM · ENDLESS POSSIBILITIES</span>
+    <h1>Welcome to <span>VIRAT</span></h1>
+    <p>Digital services, learning, opportunities and productivity — all in one place.</p>
+    <input id="search" type="search" placeholder="Search 39 services..." aria-label="Search services">
+    <div class="quick">
+      <a href="#services">Explore Services ↓</a>
+      <a href="#instant-pay">INSTANT PAY Demo</a>
+    </div>
+  </section>
+  <section id="services">
+    <h2>Explore the Ecosystem</h2>
+    <p class="muted">Choose a service or search by name or category.</p>
+    <div id="grid" class="grid"></div>
+    <p id="empty" hidden>No matching services found.</p>
+  </section>
+  <section id="instant-pay" class="pay">
+    <h2>⚡ INSTANT PAY</h2>
+    <p>Demo interface only. No real money is transferred.</p>
+    <button id="demoPay">Create Demo Transaction</button>
+    <p id="paymentResult" role="status"></p>
+  </section>
+  <footer>© <span id="year"></span> VIRAT Digital Ecosystem · One Platform. Endless Possibilities.</footer>
+</main>
+<script src="virat.js"></script>
+</body>
+</html>
