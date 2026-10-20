@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI FUSION - Indian Nationalist AI Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF9933;
+            --white: #FFFFFF;
+            --green: #138808;
+            --dark: #050508;
+            --card-bg: rgba(15, 15, 25, 0.7);
+            --border: rgba(255, 153, 51, 0.3);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--dark);
+            color: var(--white);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 20%, rgba(255,153,51,0.15) 0%, rgba(19,136,8,0.1) 40%, transparent 80%);
+            z-index: -1;
+        }
+        header {
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5, 5, 8, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-v {
+            font-family: 'Audiowide', cursive;
+            font-size: 2.2rem;
+            background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 50%, #138808 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(255,153,51,0.5);
+        }
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--white);
+        }
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 900px;
+        }
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #FF9933, #FFFFFF, #138808);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .hero p {
+            color: #b0b0c0;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        .earth-container {
+            width: 320px;
+            height: 320px;
+            margin: 20px auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .earth-globe {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #FF9933, #000080 50%, #138808 100%);
+            box-shadow: inset -20px -20px 40px rgba(0,0,0,0.8), 0 0 40px rgba(255,153,51,0.4);
+            animation: rotateEarth 20s linear infinite;
+            background-image: repeating-linear-gradient(45deg, rgba(255,153,51,0.3) 0, rgba(255,255,255,0.2) 20px, rgba(19,136,8,0.3) 40px);
+        }
+        @keyframes rotateEarth {
+            0% { background-position: 0 0; }
+            100% { background-position: 500px 0; }
+        }
+        .cta-btn {
+            background: linear-gradient(135deg, #FF9933, #138808);
+            color: #fff;
+            border: none;
+            padding: 14px 35px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(255,153,51,0.4);
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(19,136,8,0.6);
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #707080;
+            border-top: 1px solid var(--border);
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+    <header>
+        <div class="logo-container">
+            <div class="logo-v">V</div>
+            <div class="logo-text">AI FUSION</div>
+        </div>
+    </header>
+    <main class="hero">
+        <h1>Next-Gen AI Platform</h1>
+        <p>Empowering the future of technology with nationalist innovation and high-performance intelligence.</p>
+        <div class="earth-container">
+            <div class="earth-globe"></div>
+        </div>
+        <button class="cta-btn" onclick="alert('AI FUSION Engine Initialized!')">Launch AI Core</button>
+    </main>
+    <footer>
+        &copy; 2026 AI FUSION. Built with pride in India.
+    </footer>
+</body>
+</html>
