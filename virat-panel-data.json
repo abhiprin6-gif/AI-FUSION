@@ -1,0 +1,211 @@
+{
+  "users": [
+    {
+      "id": "6a10bac2-25c0-4be6-a39f-9cff4b79b203",
+      "username": "admin",
+      "email": "admin@virat.local",
+      "salt": "23bebc52ef48ea1e054246867d566967",
+      "hash": "1dce1c2cfbd9c7c868f973fc5d3f119b311f298842041de5ed3606b5ce40675efeb0bc62e9c0a66eecc8983a2d14ce47bc604a8296eb8a752b76f624c38b4c79",
+      "role": "admin",
+      "createdAt": "2026-10-21T16:01:59.030Z"
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "name": "VIRAT Search",
+      "enabled": true
+    },
+    {
+      "id": 2,
+      "name": "VIRAT AI",
+      "enabled": true
+    },
+    {
+      "id": 3,
+      "name": "AI Assistant",
+      "enabled": true
+    },
+    {
+      "id": 4,
+      "name": "Code Studio",
+      "enabled": true
+    },
+    {
+      "id": 5,
+      "name": "Image Creator",
+      "enabled": true
+    },
+    {
+      "id": 6,
+      "name": "Video Studio",
+      "enabled": true
+    },
+    {
+      "id": 7,
+      "name": "Writing Studio",
+      "enabled": true
+    },
+    {
+      "id": 8,
+      "name": "Document Tools",
+      "enabled": true
+    },
+    {
+      "id": 9,
+      "name": "PDF Tools",
+      "enabled": true
+    },
+    {
+      "id": 10,
+      "name": "Translation",
+      "enabled": true
+    },
+    {
+      "id": 11,
+      "name": "Voice Studio",
+      "enabled": true
+    },
+    {
+      "id": 12,
+      "name": "Music Studio",
+      "enabled": true
+    },
+    {
+      "id": 13,
+      "name": "Learning Hub",
+      "enabled": true
+    },
+    {
+      "id": 14,
+      "name": "News Hub",
+      "enabled": true
+    },
+    {
+      "id": 15,
+      "name": "Weather",
+      "enabled": true
+    },
+    {
+      "id": 16,
+      "name": "Calculator",
+      "enabled": true
+    },
+    {
+      "id": 17,
+      "name": "Unit Converter",
+      "enabled": true
+    },
+    {
+      "id": 18,
+      "name": "Notes",
+      "enabled": true
+    },
+    {
+      "id": 19,
+      "name": "Task Manager",
+      "enabled": true
+    },
+    {
+      "id": 20,
+      "name": "Calendar",
+      "enabled": true
+    },
+    {
+      "id": 21,
+      "name": "Cloud Storage",
+      "enabled": true
+    },
+    {
+      "id": 22,
+      "name": "File Manager",
+      "enabled": true
+    },
+    {
+      "id": 23,
+      "name": "Photo Editor",
+      "enabled": true
+    },
+    {
+      "id": 24,
+      "name": "Background Remover",
+      "enabled": true
+    },
+    {
+      "id": 25,
+      "name": "Logo Maker",
+      "enabled": true
+    },
+    {
+      "id": 26,
+      "name": "Resume Builder",
+      "enabled": true
+    },
+    {
+      "id": 27,
+      "name": "QR Generator",
+      "enabled": true
+    },
+    {
+      "id": 28,
+      "name": "Password Generator",
+      "enabled": true
+    },
+    {
+      "id": 29,
+      "name": "Text Tools",
+      "enabled": true
+    },
+    {
+      "id": 30,
+      "name": "Developer Tools",
+      "enabled": true
+    },
+    {
+      "id": 31,
+      "name": "Website Builder",
+      "enabled": true
+    },
+    {
+      "id": 32,
+      "name": "Business Tools",
+      "enabled": true
+    },
+    {
+      "id": 33,
+      "name": "Finance Tools",
+      "enabled": true
+    },
+    {
+      "id": 34,
+      "name": "INSTANT PAY Demo",
+      "enabled": true
+    },
+    {
+      "id": 35,
+      "name": "VIRAT Community",
+      "enabled": true
+    },
+    {
+      "id": 36,
+      "name": "VIRAT Games",
+      "enabled": true
+    },
+    {
+      "id": 37,
+      "name": "VIRAT Labs",
+      "enabled": true
+    },
+    {
+      "id": 38,
+      "name": "Help Center",
+      "enabled": true
+    },
+    {
+      "id": 39,
+      "name": "User Support",
+      "enabled": true
+    }
+  ],
+  "announcement": "Welcome to VIRAT DIGITAL ECOSYSTEM"
+}

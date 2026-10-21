@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI FUSION | Bharat ka AI Platform</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:white;background:linear-gradient(180deg,#ff9933 0%,#fff 38%,#138808 100%);background-attachment:fixed;min-height:100vh}
+nav{padding:20px;display:flex;justify-content:space-between;align-items:center;background:#071226;color:white}
+.logo{font-size:24px;font-weight:900;color:#5be7ff}
+.hero{text-align:center;padding:65px 20px 35px;color:#071226}
+.chakra{font-size:90px;animation:spin 15s linear infinite;display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+h1{font-size:clamp(35px,8vw,65px);margin:15px 0}
+.hero p{font-size:18px}
+button{border:0;border-radius:12px;padding:13px 20px;background:#071226;color:white;font-size:16px;cursor:pointer}
+section{padding:25px 18px 50px}
+h2{text-align:center;color:#071226}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:15px;max-width:950px;margin:25px auto}
+.card{background:#071226;color:white;border:1px solid #5be7ff;border-radius:17px;padding:22px 12px;text-align:center;box-shadow:0 8px 25px #07122630}
+.card span{font-size:30px;display:block;margin-bottom:12px}
+footer{text-align:center;background:#071226;padding:20px;color:white}
+</style>
+</head>
+<body>
+<nav><div class="logo">🇮🇳 AI FUSION</div><div>BHARAT 🇮🇳</div></nav>
+<header class="hero">
+<div class="chakra">☸️</div>
+<h1>AI FUSION</h1>
+<p>Bharat ka AI Platform</p>
+<p>One Platform. Endless Possibilities.</p>
+<button onclick="document.getElementById('tools').scrollIntoView({behavior:'smooth'})">Explore Tools ↓</button>
+</header>
+<section id="tools">
+<h2>Explore Your Tools</h2>
+<div class="grid">
+<div class="card"><span>💬</span>AI Chat</div>
+<div class="card"><span>🖼️</span>Image Studio</div>
+<div class="card"><span>🎬</span>Video Studio</div>
+<div class="card"><span>🎙️</span>Voice Studio</div>
+<div class="card"><span>💻</span>Code Studio</div>
+<div class="card"><span>🔍</span>AI Search</div>
+<div class="card"><span>📚</span>Study Assistant</div>
+<div class="card"><span>💳</span>Instant Pay Demo</div>
+</div>
+</section>
+<footer>Made with ❤️ in Bharat | AI FUSION</footer>
+</body>
+</html>
