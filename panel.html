@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VIRAT | Admin & User Panel</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#08090d;color:#f5f6ff;font-family:Arial,sans-serif}
+header{padding:18px 20px;border-bottom:1px solid #292b3a;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:22px;font-weight:bold;color:#a99aff}
+main{max-width:950px;margin:auto;padding:25px 16px}
+h1{font-size:32px}
+p{color:#a3a6b8;line-height:1.6}
+.tabs{display:flex;gap:10px;margin:25px 0;flex-wrap:wrap}
+button{padding:12px 17px;border:1px solid #35364a;border-radius:10px;background:#151622;color:white;cursor:pointer}
+button.active,button.primary{background:#8069ef;border-color:#8069ef}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.card{background:#12141e;border:1px solid #292b3a;padding:20px;border-radius:16px}
+.card h3{margin-top:0}
+input{width:100%;padding:13px;margin:7px 0 15px;border:1px solid #34364a;border-radius:9px;background:#0b0c13;color:white}
+label{font-size:13px;color:#c4c6d3}
+.notice{border:1px solid #51472b;background:#211c10;padding:15px;border-radius:12px;color:#f2d99a;font-size:13px;line-height:1.6;margin:20px 0}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<header><div class="logo">VIRAT</div><a href="index.html" style="color:#c4bcff">← Back to Website</a></header>
+<main>
+<h1>Welcome to VIRAT</h1>
+<p>Digital Ecosystem · One Platform. Endless Possibilities.</p>
+<div class="tabs">
+<button class="active" data-panel="user">User Panel</button>
+<button data-panel="admin">Admin Panel</button>
+</div>
+<div id="user" class="grid">
+<div class="card"><h3>👤 My Account</h3><p>Account dashboard interface preview.</p><button onclick="demo('Account')">Open Account</button></div>
+<div class="card"><h3>🧰 My Services</h3><p>Explore the VIRAT digital services.</p><a href="index.html"><button>Explore Services</button></a></div>
+<div class="card"><h3>💳 INSTANT PAY</h3><p>Payment feature preview. No real payments are processed.</p><button onclick="demo('INSTANT PAY')">Open Demo</button></div>
+<div class="card"><h3>⚙️ Preferences</h3><p>Basic interface settings preview.</p><button onclick="demo('Preferences')">Open Settings</button></div>
+</div>
+<div id="admin" class="grid hidden">
+<div class="card"><h3>📊 Overview</h3><p>Admin dashboard interface preview.</p><strong>39 service ideas</strong></div>
+<div class="card"><h3>🧩 Service Management</h3><p>Service management needs a secure backend.</p><button onclick="demo('Service Management')">Open Demo</button></div>
+<div class="card"><h3>👥 User Management</h3><p>User records are not connected yet.</p><button onclick="demo('User Management')">Open Demo</button></div>
+<div class="card"><h3>🔐 Security</h3><p>Real admin permissions require server-side authentication.</p><button onclick="demo('Security')">Open Demo</button></div>
+</div>
+<div class="notice">Demo only: these panels do not provide real login, secure admin permissions, database storage, or payment processing. Never enter a real password or payment details here.</div>
+</main>
+<script>
+document.querySelectorAll("[data-panel]").forEach(button=>{
+button.addEventListener("click",()=>{
+document.querySelectorAll("[data-panel]").forEach(b=>b.classList.toggle("active",b===button));
+document.querySelectorAll("main > .grid").forEach(p=>p.classList.add("hidden"));
+document.getElementById(button.dataset.panel).classList.remove("hidden");
+});
+});
+function demo(name){alert(name+" is a demo interface. Backend functionality is not connected yet.");}
+</script>
+</body>
+</html>

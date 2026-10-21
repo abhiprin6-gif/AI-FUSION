@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VIRAT | Login</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;background:#08090d;color:#f5f6ff;font-family:Arial,sans-serif}
+.card{width:100%;max-width:390px;padding:28px;background:#12141e;border:1px solid #292b3a;border-radius:20px}
+.logo{font-size:25px;font-weight:900;color:#a99aff}
+p{color:#a3a6b8;line-height:1.6}
+label{display:block;font-size:13px;margin-top:18px}
+input{width:100%;margin-top:8px;padding:13px;border:1px solid #34364a;border-radius:10px;background:#08090d;color:white}
+button{width:100%;padding:13px;margin-top:20px;background:#8069ef;color:white;border:0;border-radius:10px;font-weight:bold;cursor:pointer}
+a{color:#a99aff}
+.note{font-size:12px;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="card">
+<a href="index.html" style="text-decoration:none">← Back</a>
+<div class="logo" style="margin-top:25px">VIRAT</div>
+<h1 id="heading">Welcome back</h1>
+<p id="subtitle">Sign in to your digital workspace.</p>
+<form id="auth">
+<label>Email address</label>
+<input type="email" id="email" placeholder="you@example.com" required autocomplete="email">
+<label>Password</label>
+<input type="password" id="password" placeholder="Enter password" required minlength="8" autocomplete="current-password">
+<button type="submit" id="submit">Sign in</button>
+</form>
+<p id="switch">New to VIRAT? <a href="#" id="toggle">Create an account</a></p>
+<p class="note">Interface preview only. No account is created and no password is sent or saved. Secure authentication must be connected to a backend.</p>
+</div>
+<script>
+let register=false;
+const form=document.getElementById("auth");
+document.getElementById("toggle").addEventListener("click",e=>{
+e.preventDefault();register=!register;
+document.getElementById("heading").textContent=register?"Create your account":"Welcome back";
+document.getElementById("subtitle").textContent=register?"Join the VIRAT digital ecosystem.":"Sign in to your digital workspace.";
+document.getElementById("submit").textContent=register?"Register":"Sign in";
+document.getElementById("password").autocomplete=register?"new-password":"current-password";
+document.getElementById("switch").innerHTML=register?'Already registered? <a href="#" id="toggle">Sign in</a>':'New to VIRAT? <a href="#" id="toggle">Create an account</a>';
+document.getElementById("toggle").addEventListener("click",e2=>{e2.preventDefault();document.getElementById("toggle").click()},{once:true});
+});
+form.addEventListener("submit",e=>{
+e.preventDefault();
+alert("Demo only: authentication backend is not connected. No credentials were saved.");
+});
+</script>
+</body>
+</html>
