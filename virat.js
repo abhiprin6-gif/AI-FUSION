@@ -1,0 +1,46 @@
+const services=[
+["✦","AI Assistant","AI","Smart chat, ideas और रोज़ के सवालों के लिए एक डिजिटल सहायक।"],
+["⌘","Code Studio","Tech","कोड लिखने और सीखने के लिए उपयोगी वर्कस्पेस।"],
+["▧","Image Creator","Creative","नए visual ideas और artwork की योजना बनाएँ।"],
+["▶","Video Studio","Creative","वीडियो प्रोजेक्ट और कंटेंट की तैयारी करें।"],
+["♫","Audio Lab","Creative","ऑडियो, वॉइस और साउंड प्रोजेक्ट व्यवस्थित करें।"],
+["✎","Writing Desk","Productivity","लेख, पोस्ट और ड्राफ्ट तैयार करने की जगह।"],
+["⌕","Smart Search","Productivity","अपनी डिजिटल जानकारी खोजने का सरल इंटरफ़ेस।"],
+["▤","PDF Tools","Tools","PDF दस्तावेज़ों से जुड़े काम व्यवस्थित करें।"],
+["▦","Document Hub","Productivity","अपने दस्तावेज़ों की योजना और प्रबंधन करें।"],
+["◈","Logo Workshop","Creative","ब्रांड और लोगो के विचार विकसित करें।"],
+["◎","Photo Studio","Creative","फोटो एडिटिंग वर्कफ़्लो की योजना बनाएँ।"],
+["▣","Design Canvas","Creative","पोस्टर, बैनर और लेआउट के आइडिया बनाएँ।"],
+["⌬","Website Builder","Tech","वेबसाइट प्रोजेक्ट की संरचना तैयार करें।"],
+["◇","App Planner","Tech","मोबाइल ऐप की स्क्रीन और फीचर प्लान करें।"],
+["♧","Study Buddy","Education","पढ़ाई और रिविज़न की योजना बनाएँ।"],
+["▥","Notes Space","Productivity","नोट्स और जरूरी विचार एक जगह रखें।"],
+["◷","Focus Timer","Productivity","काम के लिए फोकस सेशन की योजना बनाएँ।"],
+["✓","Task Manager","Productivity","टास्क और प्राथमिकताएँ व्यवस्थित करें।"],
+["▦","Calendar","Productivity","डेली प्लान और इवेंट व्यवस्थित करें।"],
+["▤","Resume Maker","Tools","रिज़्यूमे बनाने की तैयारी करें।"],
+["↗","Career Guide","Education","करियर विकल्पों और लक्ष्यों की योजना बनाएँ।"],
+["₹","Budget Planner","Finance","बजट और खर्चों का हिसाब रखने की योजना।"],
+["▣","Invoice Desk","Finance","इनवॉइस वर्कफ़्लो व्यवस्थित करें।"],
+["◉","Business Hub","Business","व्यवसाय के डिजिटल कामों का केंद्र।"],
+["♧","Agri Assistant","India","खेती की योजना और कृषि जानकारी व्यवस्थित करें।"],
+["☀","Weather Desk","India","मौसम से जुड़ी जानकारी देखने के लिए लिंक जोड़ें।"],
+["⌖","Travel Planner","India","यात्रा और रूट की योजना बनाएँ।"],
+["▰","Shop Studio","Business","ऑनलाइन दुकान के उत्पाद और श्रेणियाँ व्यवस्थित करें।"],
+["♡","Health Journal","Lifestyle","रूटीन और वेलनेस नोट्स व्यवस्थित करें।"],
+["⚑","Fitness Planner","Lifestyle","फिटनेस लक्ष्य और अभ्यास की योजना बनाएँ।"],
+["◌","Meditation","Lifestyle","शांत समय और माइंडफुलनेस रूटीन की योजना।"],
+["▧","Social Studio","Creative","सोशल मीडिया कंटेंट व्यवस्थित करें।"],
+["✉","Email Writer","Productivity","ईमेल ड्राफ्ट और जवाब तैयार करने की जगह।"],
+["♧","Community","Social","डिजिटल कम्युनिटी के विचार और अपडेट।"],
+["◈","Cloud Files","Tools","क्लाउड फाइल सेवाओं के लिंक के लिए जगह।"],
+["⚙","Automation","Tech","बार-बार होने वाले कामों की योजना बनाएँ।"],
+["▣","Learning Hub","Education","सीखने के संसाधन और कोर्स व्यवस्थित करें।"],
+["₹","INSTANT PAY Demo","Finance","यह केवल UI डेमो है; असली भुगतान नहीं करता।"],
+["✦","VIRAT Labs","Tech","नए डिजिटल प्रोजेक्ट और प्रयोग।"]
+];
+const grid=document.getElementById("grid"),search=document.getElementById("search"),filters=document.getElementById("filters"),count=document.getElementById("count"),empty=document.getElementById("empty");
+const categories=["All",...new Set(services.map(x=>x[2]))];let selected="All";
+categories.forEach(c=>{const b=document.createElement("button");b.className="filter"+(c==="All"?" active":"");b.textContent=c;b.onclick=()=>{selected=c;filters.querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===b));render()};filters.appendChild(b)});
+function render(){const q=search.value.trim().toLowerCase();const filtered=services.filter(s=>(selected==="All"||s[2]===selected)&&s.slice(1).join(" ").toLowerCase().includes(q));grid.replaceChildren();filtered.forEach(s=>{const card=document.createElement("article");card.className="service";const icon=document.createElement("div");icon.className="service-icon";icon.textContent=s[0];const h=document.createElement("h3");h.textContent=s[1];const p=document.createElement("p");p.textContent=s[3];const tag=document.createElement("span");tag.className="tag";tag.textContent=s[2];card.append(icon,h,p,tag);grid.appendChild(card)});count.textContent=filtered.length+" SERVICES";empty.hidden=filtered.length!==0}
+search.addEventListener("input",render);document.getElementById("clear").addEventListener("click",()=>{search.value="";render();search.focus()});document.getElementById("theme").addEventListener("click",()=>{document.body.classList.toggle("light");document.getElementById("theme").textContent=document.body.classList.contains("light")?"🌙":"☀️"});render();

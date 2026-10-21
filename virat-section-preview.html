@@ -1,0 +1,88 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>
+:root{--bg:#070b18;--panel:#10182b;--text:#f4f7ff;--muted:#9ba8c4;--line:#26314a;--accent:#8b7cff;--cyan:#5be7ff;--glow:#8b7cff25}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;transition:background .25s,color .25s}a{color:inherit;text-decoration:none}button,input{font:inherit}.top{height:76px;padding:0 max(5%,calc((100% - 1200px)/2));display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 88%,transparent);position:sticky;top:0;z-index:5;backdrop-filter:blur(18px)}.brand{display:flex;align-items:center;gap:11px;font-size:21px;font-weight:900;letter-spacing:1px}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:2px}.logo{width:43px;height:43px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--cyan));color:#07101e;font-size:25px}.theme{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:10px;cursor:pointer}.hero{max-width:1200px;margin:auto;padding:78px 5% 24px;min-height:570px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:390px;height:390px;right:5%;top:35px;background:radial-gradient(circle,var(--glow),transparent 70%);pointer-events:none}.eyebrow{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:2px}.hero h1{font-size:clamp(38px,6vw,70px);line-height:1.07;letter-spacing:-2px;max-width:730px;margin:22px 0}.hero h1 span,.section-head h2 span,.about h2 span{background:linear-gradient(90deg,var(--accent),var(--cyan));color:transparent;background-clip:text}.hero p,.about p{color:var(--muted);line-height:1.8;max-width:570px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:27px 0}.primary,.secondary{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;border-radius:12px;font-weight:800;font-size:13px}.primary{background:linear-gradient(100deg,var(--accent),#6259dc);color:white;box-shadow:0 8px 28px var(--glow)}.secondary{border:1px solid var(--line)}.orbit{position:absolute;right:11%;top:110px;width:220px;height:220px;border:1px solid #8b7cff70;border-radius:50%;display:grid;place-items:center;animation:spin 25s linear infinite}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #5be7ff55;border-radius:50%;inset:18px;transform:rotateX(65deg) scaleY(.65)}.orbit:after{transform:rotateY(65deg) scaleX(.65)}.orbit-core{width:92px;height:92px;display:grid;place-items:center;border-radius:28px;background:linear-gradient(135deg,#8b7cff,#5be7ff);color:#080d1a;font-size:55px;font-weight:950;box-shadow:0 0 55px #8b7cff60;animation:spin 25s linear infinite reverse}.orbit i,.orbit b,.orbit em{position:absolute;font-style:normal;color:var(--cyan);font-size:25px}.orbit i{top:5px;left:45px}.orbit b{right:3px;bottom:45px}.orbit em{left:20px;bottom:25px}.stats{display:flex;gap:50px;border-top:1px solid var(--line);padding-top:25px;margin-top:50px;max-width:620px}.stats strong,.stats span{display:block}.stats strong{font-size:23px}.stats span{font-size:11px;color:var(--muted);margin-top:4px}.services{max-width:1200px;margin:auto;padding:70px 5%}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:25px}.section-head h2,.about h2{font-size:clamp(28px,4vw,42px);margin:9px 0}.count{font-size:10px;letter-spacing:1px;color:var(--muted);border:1px solid var(--line);padding:9px 12px;border-radius:20px}.search-wrap{display:flex;align-items:center;gap:12px;padding:0 15px;border:1px solid var(--line);border-radius:14px;background:var(--panel);height:54px}.search-wrap span{font-size:27px;color:var(--cyan)}.search-wrap input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--text)}.search-wrap button{border:0;background:transparent;color:var(--muted);cursor:pointer}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:19px 0 25px}.filter{padding:9px 13px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:30px;cursor:pointer;font-size:12px}.filter.active{background:var(--accent);border-color:var(--accent);color:white}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.service{border:1px solid var(--line);background:linear-gradient(145deg,var(--panel),color-mix(in srgb,var(--panel) 80%,var(--bg)));padding:21px;border-radius:18px;min-height:172px;transition:transform .2s,border-color .2s}.service:hover{transform:translateY(-4px);border-color:var(--accent)}.service-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;background:var(--glow);font-size:22px;margin-bottom:15px}.service h3{font-size:15px;margin:0 0 7px}.service p{font-size:12px;line-height:1.6;color:var(--muted);margin:0 0 14px}.service .tag{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--cyan)}#empty{color:var(--muted);text-align:center;padding:35px}.about{margin:20px auto 70px;max-width:1100px;width:90%;padding:55px;border:1px solid var(--line);border-radius:25px;background:radial-gradient(ellipse at 100% 0,var(--glow),transparent 55%),var(--panel)}.about p{margin-bottom:25px}footer{border-top:1px solid var(--line);padding:25px 5%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:11px}footer .brand{color:var(--text)}@keyframes spin{to{transform:rotate(360deg)}}body.light{--bg:#f4f7ff;--panel:#fff;--text:#111a31;--muted:#5d6980;--line:#dce2f0;--glow:#7165e91a}body.light .top{background:#f4f7ffeF}@media(max-width:760px){.hero{padding-top:55px;min-height:0}.orbit{position:relative;top:auto;right:auto;width:160px;height:160px;margin:30px auto 0}.orbit-core{width:68px;height:68px;font-size:40px;border-radius:21px}.stats{gap:0;justify-content:space-between;margin-top:35px}.stats strong{font-size:20px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about{padding:30px 23px}.services{padding-top:45px}}@media(max-width:430px){.grid{grid-template-columns:1fr}.hero h1{letter-spacing:-1px}.section-head{align-items:start;flex-direction:column}.count{align-self:start}.stats span{font-size:10px}.top{height:68px}.brand{font-size:18px}}
+
+</style></head><body>
+<section id="virat-ecosystem">
+
+<header class="top">
+  <a class="brand" href="virat.html"><span class="logo">V</span><span>VIRAT<small>DIGITAL ECOSYSTEM</small></span></a>
+  <button id="theme" class="theme" aria-label="Theme बदलें">☀️</button>
+</header>
+
+<main>
+<section class="hero">
+  <div class="eyebrow">✦ ONE PLATFORM · MANY POSSIBILITIES</div>
+  <h1>Your Digital World,<br><span>One VIRAT Platform.</span></h1>
+  <p>काम, क्रिएटिविटी, टेक्नोलॉजी और डिजिटल सेवाएँ — सब एक जगह।</p>
+  <div class="hero-actions">
+    <a href="#services" class="primary">Explore Services ↗</a>
+    <a href="#about" class="secondary">हमारे बारे में</a>
+  </div>
+  <div class="orbit"><div class="orbit-core">V</div><i>✦</i><b>✧</b><em>+</em></div>
+  <div class="stats"><div><strong>39+</strong><span>Service Ideas</span></div><div><strong>01</strong><span>Unified Platform</span></div><div><strong>24/7</strong><span>Digital Access</span></div></div>
+</section>
+
+<section id="services" class="services">
+  <div class="section-head"><div><span class="eyebrow">THE ECOSYSTEM</span><h2>Explore <span>Services</span></h2></div><span id="count" class="count">39 SERVICES</span></div>
+  <div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search services..." autocomplete="off"><button id="clear">✕</button></div>
+  <div id="filters" class="filters"></div>
+  <div id="grid" class="grid"></div>
+  <p id="empty" hidden>कोई service नहीं मिली। दूसरा नाम खोजें।</p>
+</section>
+
+<section id="about" class="about"><span class="eyebrow">BUILT FOR YOUR NEXT STEP</span><h2>बड़े सपने। <span>एक डिजिटल शुरुआत।</span></h2><p>VIRAT एक ऐसा डिजिटल इकोसिस्टम है जहाँ उपयोगी टूल्स और ऑनलाइन सेवाओं को एक आसान अनुभव में लाने का लक्ष्य है।</p><a class="primary" href="#services">Services देखें ↗</a></section>
+</main>
+<footer><a class="brand" href="virat.html"><span class="logo">V</span><span>VIRAT<small>DIGITAL ECOSYSTEM</small></span></a><span>Designed for the digital future ✦</span><a href="index.html">← AI Fusion</a></footer>
+
+
+</section>
+<script>
+const services=[
+["✦","AI Assistant","AI","Smart chat, ideas और रोज़ के सवालों के लिए एक डिजिटल सहायक।"],
+["⌘","Code Studio","Tech","कोड लिखने और सीखने के लिए उपयोगी वर्कस्पेस।"],
+["▧","Image Creator","Creative","नए visual ideas और artwork की योजना बनाएँ।"],
+["▶","Video Studio","Creative","वीडियो प्रोजेक्ट और कंटेंट की तैयारी करें।"],
+["♫","Audio Lab","Creative","ऑडियो, वॉइस और साउंड प्रोजेक्ट व्यवस्थित करें।"],
+["✎","Writing Desk","Productivity","लेख, पोस्ट और ड्राफ्ट तैयार करने की जगह।"],
+["⌕","Smart Search","Productivity","अपनी डिजिटल जानकारी खोजने का सरल इंटरफ़ेस।"],
+["▤","PDF Tools","Tools","PDF दस्तावेज़ों से जुड़े काम व्यवस्थित करें।"],
+["▦","Document Hub","Productivity","अपने दस्तावेज़ों की योजना और प्रबंधन करें।"],
+["◈","Logo Workshop","Creative","ब्रांड और लोगो के विचार विकसित करें।"],
+["◎","Photo Studio","Creative","फोटो एडिटिंग वर्कफ़्लो की योजना बनाएँ।"],
+["▣","Design Canvas","Creative","पोस्टर, बैनर और लेआउट के आइडिया बनाएँ।"],
+["⌬","Website Builder","Tech","वेबसाइट प्रोजेक्ट की संरचना तैयार करें।"],
+["◇","App Planner","Tech","मोबाइल ऐप की स्क्रीन और फीचर प्लान करें।"],
+["♧","Study Buddy","Education","पढ़ाई और रिविज़न की योजना बनाएँ।"],
+["▥","Notes Space","Productivity","नोट्स और जरूरी विचार एक जगह रखें।"],
+["◷","Focus Timer","Productivity","काम के लिए फोकस सेशन की योजना बनाएँ।"],
+["✓","Task Manager","Productivity","टास्क और प्राथमिकताएँ व्यवस्थित करें।"],
+["▦","Calendar","Productivity","डेली प्लान और इवेंट व्यवस्थित करें।"],
+["▤","Resume Maker","Tools","रिज़्यूमे बनाने की तैयारी करें।"],
+["↗","Career Guide","Education","करियर विकल्पों और लक्ष्यों की योजना बनाएँ।"],
+["₹","Budget Planner","Finance","बजट और खर्चों का हिसाब रखने की योजना।"],
+["▣","Invoice Desk","Finance","इनवॉइस वर्कफ़्लो व्यवस्थित करें।"],
+["◉","Business Hub","Business","व्यवसाय के डिजिटल कामों का केंद्र।"],
+["♧","Agri Assistant","India","खेती की योजना और कृषि जानकारी व्यवस्थित करें।"],
+["☀","Weather Desk","India","मौसम से जुड़ी जानकारी देखने के लिए लिंक जोड़ें।"],
+["⌖","Travel Planner","India","यात्रा और रूट की योजना बनाएँ।"],
+["▰","Shop Studio","Business","ऑनलाइन दुकान के उत्पाद और श्रेणियाँ व्यवस्थित करें।"],
+["♡","Health Journal","Lifestyle","रूटीन और वेलनेस नोट्स व्यवस्थित करें।"],
+["⚑","Fitness Planner","Lifestyle","फिटनेस लक्ष्य और अभ्यास की योजना बनाएँ।"],
+["◌","Meditation","Lifestyle","शांत समय और माइंडफुलनेस रूटीन की योजना।"],
+["▧","Social Studio","Creative","सोशल मीडिया कंटेंट व्यवस्थित करें।"],
+["✉","Email Writer","Productivity","ईमेल ड्राफ्ट और जवाब तैयार करने की जगह।"],
+["♧","Community","Social","डिजिटल कम्युनिटी के विचार और अपडेट।"],
+["◈","Cloud Files","Tools","क्लाउड फाइल सेवाओं के लिंक के लिए जगह।"],
+["⚙","Automation","Tech","बार-बार होने वाले कामों की योजना बनाएँ।"],
+["▣","Learning Hub","Education","सीखने के संसाधन और कोर्स व्यवस्थित करें।"],
+["₹","INSTANT PAY Demo","Finance","यह केवल UI डेमो है; असली भुगतान नहीं करता।"],
+["✦","VIRAT Labs","Tech","नए डिजिटल प्रोजेक्ट और प्रयोग।"]
+];
+const grid=document.getElementById("grid"),search=document.getElementById("search"),filters=document.getElementById("filters"),count=document.getElementById("count"),empty=document.getElementById("empty");
+const categories=["All",...new Set(services.map(x=>x[2]))];let selected="All";
+categories.forEach(c=>{const b=document.createElement("button");b.className="filter"+(c==="All"?" active":"");b.textContent=c;b.onclick=()=>{selected=c;filters.querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===b));render()};filters.appendChild(b)});
+function render(){const q=search.value.trim().toLowerCase();const filtered=services.filter(s=>(selected==="All"||s[2]===selected)&&s.slice(1).join(" ").toLowerCase().includes(q));grid.replaceChildren();filtered.forEach(s=>{const card=document.createElement("article");card.className="service";const icon=document.createElement("div");icon.className="service-icon";icon.textContent=s[0];const h=document.createElement("h3");h.textContent=s[1];const p=document.createElement("p");p.textContent=s[3];const tag=document.createElement("span");tag.className="tag";tag.textContent=s[2];card.append(icon,h,p,tag);grid.appendChild(card)});count.textContent=filtered.length+" SERVICES";empty.hidden=filtered.length!==0}
+search.addEventListener("input",render);document.getElementById("clear").addEventListener("click",()=>{search.value="";render();search.focus()});document.getElementById("theme").addEventListener("click",()=>{document.body.classList.toggle("light");document.getElementById("theme").textContent=document.body.classList.contains("light")?"🌙":"☀️"});render();
+
+</script></body></html>
