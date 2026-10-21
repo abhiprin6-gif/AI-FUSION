@@ -1,100 +1,119 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#030812">
-<title>AI FUSION | Bharat ka AI Platform</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08090d">
+<title>VIRAT — Digital Ecosystem</title>
 <style>
-:root{--bg:#020812;--panel:#071522;--green:#00ff83;--orange:#ff941c;--blue:#27baff;--white:#f5f8ff}
+:root{color-scheme:dark;--bg:#08090d;--panel:#11131b;--line:#252836;--text:#f5f6ff;--muted:#969bad;--accent:#8b7cff;--cyan:#5be7ff}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--white);font-family:Arial, sans-serif;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif}
+button,input{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
 a{color:inherit;text-decoration:none}
-.container{width:min(1200px,92%);margin:auto}
-header{position:sticky;top:0;z-index:10;background:#030812eF;border-bottom:1px solid #ffffff25;backdrop-filter:blur(15px)}
-.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:12px;font-size:24px;font-weight:900}
-.flag{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(#ff762d 0 33%,white 33% 66%,#079b4b 66%);font-size:20px}
-.brand small{display:block;font-size:11px;font-weight:400;color:#c6d5e6;margin-top:3px}
-nav{display:flex;gap:30px;font-size:14px}
-nav a:hover{color:var(--green)}
-.premium{border:1px solid #ffbd43;border-radius:30px;padding:12px 20px;color:#ffd36d}
-.hero{position:relative;overflow:hidden;padding:55px 0 24px;background:radial-gradient(ellipse at 75% 30%,#173451 0,transparent 42%),linear-gradient(120deg,#06101b,#020811 65%,#03251b)}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(165deg,transparent 10%,#ff741a70 16%,#ff9a3030 21%,transparent 27%,#fff 33%,#cbd8f340 38%,transparent 43%,#00dc7150 50%,transparent 58%);pointer-events:none}
-.hero-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:20px;min-height:420px}
-.tag{display:inline-block;border:1px solid #ff941c70;border-radius:25px;padding:10px 14px;font-size:13px;background:#101a25b8}
-h1{font-size:clamp(42px,6vw,70px);line-height:1.02;margin:22px 0 10px;letter-spacing:-2px}
-.saffron{color:#ff9c20}.white{color:#f7fbff}.green{color:#42f79c}
-.hero h2{font-size:32px;margin:12px 0}
-.hero p{line-height:1.65;color:#d4e1ef;max-width:490px}
-.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:25px}
-.btn{display:inline-block;border-radius:30px;padding:15px 23px;font-weight:bold;font-size:14px;background:linear-gradient(100deg,#00d96b,#ff9b16);color:#06101a;border:0}
-.btn-outline{background:#071522b8;color:white;border:1px solid #54dcb6}
-.visual{height:390px;display:grid;place-items:center;position:relative}
-.chakra{width:min(80%,300px);aspect-ratio:1;border:13px solid #154ad4;border-radius:50%;display:grid;place-items:center;position:absolute;top:7px;animation:spin 50s linear infinite;box-shadow:0 0 25px #2679ff80,inset 0 0 20px #287bff70;background:repeating-conic-gradient(from 0deg,#194bca 0deg 2deg,transparent 2deg 15deg)}
-.chakra:before{content:"";position:absolute;inset:12%;border:5px solid #174bc9;border-radius:50%}
-.orb{z-index:1;width:235px;height:235px;border-radius:50%;display:grid;place-items:center;font-size:64px;font-weight:900;color:#7eeaff;background:radial-gradient(circle at 35% 25%,#276dff,#03112c 53%,#02050b 75%);border:2px solid #56c8ff;box-shadow:0 0 22px #178bff,0 0 65px #175dff,inset 0 0 25px #52c8ff;position:relative}
-.orb:after{content:"";position:absolute;width:290px;height:100px;border:10px solid #ff941c;border-left-color:#fff;border-bottom-color:#00dc73;border-radius:50%;transform:rotate(-25deg);box-shadow:0 0 20px #ff941c}
-.jai{position:absolute;right:0;bottom:35px;color:#fff;font-family:cursive;font-size:27px;transform:rotate(-8deg)}
-@keyframes spin{to{transform:rotate(360deg)}}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:8px auto 30px;padding:20px;border:1px solid #00dfb4;border-radius:22px;background:#03131bdc;position:relative}
-.stat{text-align:center;border-right:1px solid #ffffff24;padding:8px}
-.stat:last-child{border:0}.stat strong{display:block;font-size:25px}.stat span{display:block;color:#d1dfed;font-size:13px;margin-top:5px}
-section{padding:40px 0}
-.section-title{text-align:center;font-size:clamp(28px,4vw,40px);margin:10px 0}
-.sub{text-align:center;color:#b9cce0;margin-bottom:35px}
-.tools{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
-.tool-card{border:1px solid var(--glow);border-radius:18px;padding:20px 16px;background:linear-gradient(145deg,#101925,#040a13);box-shadow:0 0 13px color-mix(in srgb,var(--glow),transparent 55%);display:flex;flex-direction:column;min-height:220px}
-.tool-icon{width:52px;height:52px;border:2px solid var(--glow);border-radius:50%;display:grid;place-items:center;font-size:25px;color:var(--glow);margin-bottom:16px}
-.tool-card h3{font-size:16px;margin:0 0 10px}.tool-card p{font-size:13px;color:#c5d3e5;line-height:1.5;flex:1}
-.try{display:block;text-align:center;border:1px solid var(--glow);border-radius:25px;padding:10px;margin-top:10px;font-size:13px}
-.features{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
-.features h2{font-size:36px;margin:20px 0 10px}.checks{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:22px 0}
-.feature-list{border:1px solid #183348;border-radius:18px;padding:20px;background:#06111c}
-.feature-row{display:flex;align-items:center;gap:15px;padding:16px 0;border-bottom:1px solid #ffffff18}
-.feature-row:last-child{border:0}.feature-icon{font-size:25px}
-footer{border-top:1px solid #10bd8d;padding:25px 0;margin-top:15px}
-.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.footer-links{display:flex;gap:20px;flex-wrap:wrap;color:#c5d3e5;font-size:13px}
-@media(max-width:850px){nav{gap:13px}.hero-grid{grid-template-columns:1fr}.hero-copy{text-align:center}.hero-copy p{margin:15px auto}.actions{justify-content:center}.visual{height:330px}.chakra{width:250px}.orb{width:190px;height:190px}.orb:after{width:230px;height:75px}.tools{grid-template-columns:repeat(3,minmax(0,1fr))}.features{gap:25px}}
-@media(max-width:600px){.nav{padding:12px 0;flex-wrap:wrap}.brand{font-size:20px}.flag{width:36px;height:36px}nav{order:3;width:100%;justify-content:space-between;gap:8px;font-size:12px}.premium{font-size:12px;padding:10px}.hero{padding-top:30px}.hero-grid{gap:0}.hero h2{font-size:26px}.visual{height:285px;order:2}.chakra{width:220px;border-width:10px}.orb{width:165px;height:165px;font-size:50px}.orb:after{width:205px;height:65px;border-width:7px}.jai{right:0;bottom:12px;font-size:22px}.stats{grid-template-columns:repeat(2,1fr);padding:12px 6px}.stat{border-right:1px solid #ffffff24}.stat:nth-child(2){border-right:0}.stat:nth-child(3){border-right:1px solid #ffffff24}.stat strong{font-size:20px}.tools{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tool-card{padding:15px 12px;min-height:210px}.tool-card h3{font-size:14px}.features{grid-template-columns:1fr}.features h2{font-size:30px}.checks{font-size:13px;gap:12px}.section-title{line-height:1.15}.footer-row{justify-content:center;text-align:center}.footer-links{justify-content:center}}
+header{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;border-bottom:1px solid var(--line);background:#08090deF;position:sticky;top:0;z-index:10;backdrop-filter:blur(18px)}
+.brand{display:flex;align-items:center;gap:11px;font-size:21px;font-weight:850;letter-spacing:1px}
+.brand-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--cyan));color:#08090d;font-size:23px}
+.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:3px;margin-top:2px}
+.header-actions{display:flex;gap:10px}
+.btn{border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--text);padding:10px 15px;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:white;font-weight:700}
+.hero{padding:76px 20px 48px;text-align:center;max-width:900px;margin:auto}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid #37334f;border-radius:30px;padding:8px 14px;color:#c4bcff;font-size:12px;background:#151223}
+.dot{width:7px;height:7px;border-radius:50%;background:#67f5bd}
+h1{font-size:clamp(43px,8vw,82px);line-height:1.02;letter-spacing:-4px;margin:25px 0 18px}
+.gradient{background:linear-gradient(90deg,#a99aff,#5be7ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:590px;margin:0 auto;color:var(--muted);font-size:16px;line-height:1.8}
+.hero-actions{display:flex;justify-content:center;gap:12px;margin-top:28px;flex-wrap:wrap}
+.stats{display:flex;justify-content:center;gap:35px;margin-top:37px;color:var(--muted);font-size:12px;flex-wrap:wrap}
+.stats strong{color:var(--text);font-size:15px}
+main{max-width:1120px;margin:auto;padding:0 22px 70px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:24px 0}
+.section-head h2{font-size:25px;margin:0 0 7px;letter-spacing:-.7px}
+.section-head p{margin:0;color:var(--muted);font-size:13px}
+.count{color:var(--muted);font-size:12px}
+.search-wrap{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:0 15px;margin-bottom:17px}
+.search-wrap span{font-size:19px;color:var(--muted)}
+.search-wrap input{width:100%;background:transparent;border:0;outline:0;color:var(--text);padding:16px 0}
+.filters{display:flex;gap:8px;overflow-x:auto;padding:2px 0 18px;scrollbar-width:none}
+.filters button{white-space:nowrap;border:1px solid var(--line);background:transparent;color:var(--muted);padding:9px 14px;border-radius:30px;cursor:pointer;font-size:12px}
+.filters button.active{background:#211d3b;border-color:#6555bb;color:#e2dcff}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.card{min-height:154px;padding:19px;border:1px solid var(--line);background:linear-gradient(145deg,#141621,#0e1017);border-radius:17px;transition:transform .2s,border-color .2s;cursor:pointer}
+.card:hover{transform:translateY(-3px);border-color:#7162b9}
+.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px}
+.card-icon{width:43px;height:43px;display:grid;place-items:center;border:1px solid #343044;border-radius:13px;background:#211d30;font-size:22px}
+.arrow{color:#686d81}
+.card h3{font-size:14px;margin:0 0 7px}
+.card p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}
+.tag{display:inline-block;font-size:9px;color:#b9afff;background:#211d36;padding:4px 7px;border-radius:5px;margin-top:11px}
+.empty{display:none;text-align:center;color:var(--muted);padding:45px}
+footer{border-top:1px solid var(--line);padding:25px 6%;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:var(--muted);font-size:11px}
+footer strong{color:var(--text)}
+@media(max-width:850px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){header{height:64px;padding:0 16px}.brand{font-size:17px}.brand-icon{width:34px;height:34px}.header-actions .btn{padding:9px 11px;font-size:12px}.hero{padding:60px 19px 38px}h1{letter-spacing:-2px}.hero p{font-size:14px}.stats{gap:17px}.stats strong{font-size:13px}main{padding:0 15px 50px}.section-head h2{font-size:22px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{padding:14px;min-height:151px}.card-icon{width:39px;height:39px}footer{padding:22px 16px}}
 </style>
 </head>
 <body>
-<header><div class="container nav">
-<a class="brand" href="#home"><span class="flag">🇮🇳</span><span>AI FUSION<small>India's AI Powerhouse</small></span></a>
-<nav><a href="#home">Home</a><a href="#tools">Tools</a><a href="#features">Features</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-<a class="premium" href="#tools">👑 Premium</a>
-</div></header>
-<main id="home">
-<div class="hero"><div class="container hero-grid">
-<div class="hero-copy"><span class="tag">🔥 Made in India　•　Powered by AI</span>
-<h1><span class="saffron">Bharat</span> <span class="green">ka</span><br><span class="white">AI Platform</span></h1>
-<h2>Soch Se Sach Tak</h2>
-<p>AI Fusion – aapke har idea ko reality me badalne ke liye ek powerful AI tools ka platform.</p>
-<p><b>Fast</b>　<span class="saffron">•</span>　<b>Free</b>　<span class="green">•</span>　<b>Future Ready</b></p>
-<div class="actions"><a class="btn" href="#tools">🚀 Get Started →</a><a class="btn btn-outline" href="#tools">▦ Explore Tools</a></div>
+<header>
+<a class="brand" href="#"><span class="brand-icon">V</span><span>VIRAT<small>DIGITAL ECOSYSTEM</small></span></a>
+<div class="header-actions"><button class="btn" id="theme" aria-label="Toggle theme">☼</button><a class="btn primary" href="#services">Explore ↗</a></div>
+</header>
+
+<section class="hero">
+<div class="eyebrow"><span class="dot"></span> ONE PLATFORM · ENDLESS POSSIBILITIES</div>
+<h1>Your Digital World,<br><span class="gradient">One VIRAT Platform.</span></h1>
+<p>A unified digital ecosystem designed to bring your everyday online tools together in one clean, modern experience.</p>
+<div class="hero-actions"><a href="#services" class="btn primary">Explore Services ↗</a><a href="#about" class="btn">Discover VIRAT</a></div>
+<div class="stats"><span><strong>39+</strong> Service Ideas</span><span><strong>01</strong> Unified Platform</span><span><strong>∞</strong> Possibilities</span></div>
+</section>
+
+<main id="services">
+<div class="section-head"><div><h2>Explore Services</h2><p>Find the right tool for what you want to do.</p></div><span class="count" id="count">39 SERVICES</span></div>
+<div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search services..." autocomplete="off"><button class="btn" id="clear">Clear</button></div>
+<div class="filters" id="filters">
+<button class="active" data-filter="All">All Services</button>
+<button data-filter="AI">AI & Smart</button>
+<button data-filter="Create">Creative</button>
+<button data-filter="Work">Productivity</button>
+<button data-filter="Learn">Learning</button>
+<button data-filter="Utility">Utilities</button>
+<button data-filter="Finance">Finance</button>
 </div>
-<div class="visual"><div class="chakra"></div><div class="orb">AI</div><div class="jai">Jai<br>Hind 🇮🇳</div></div>
-</div></div>
-<div class="container"><div class="stats">
-<div class="stat"><strong>⚡ 50+</strong><span>AI Tools</span></div><div class="stat"><strong>♙ 100K+</strong><span>Happy Users</span></div><div class="stat"><strong>🛡 99.9%</strong><span>Uptime</span></div><div class="stat"><strong>⭐ Free</strong><span>Basic Tools</span></div>
-</div></div>
-<section id="tools"><div class="container"><h2 class="section-title">🇮🇳 Popular <span class="saffron">AI</span> Tools 🇮🇳</h2><p class="sub">Powerful tools for your creativity, productivity and more.</p>
-<div class="tools">
-<div class="tool-card" style="--glow:#ff9c20"><div class="tool-icon">▧</div><h3>Image Generator</h3><p>Create stunning images with AI.</p><a class="try" href="#contact">Try Now →</a></div>
-<div class="tool-card" style="--glow:#22aaff"><div class="tool-icon">🎙</div><h3>Text to Speech</h3><p>Convert text to realistic voice.</p><a class="try" href="#contact">Try Now →</a></div>
-<div class="tool-card" style="--glow:#bf53ff"><div class="tool-icon">‹/›</div><h3>Code Generator</h3><p>Generate clean code with AI.</p><a class="try" href="#contact">Try Now →</a></div>
-<div class="tool-card" style="--glow:#00f58b"><div class="tool-icon">☏</div><h3>Chat with AI</h3><p>Get instant answers and ideas.</p><a class="try" href="#contact">Try Now →</a></div>
-<div class="tool-card" style="--glow:#ff3989"><div class="tool-icon">▷</div><h3>Video Generator</h3><p>Turn your ideas into videos.</p><a class="try" href="#contact">Try Now →</a></div>
-</div></div></section>
-<section id="features"><div class="container features">
-<div><span class="tag">⭐ Why Choose Us?</span><h2>Next-Gen AI Tools<br>For <span class="green">Everyone</span></h2><p>AI Fusion is designed to make AI simple, fast and accessible. Whether you are a student, creator, developer or business owner — we have tools for you.</p>
-<div class="checks"><span>✅ Easy to Use</span><span>✅ Mobile Friendly</span><span>✅ No Login Required</span><span>✅ Free Basic Tools</span></div><a class="btn" href="#tools">Start Exploring →</a></div>
-<div class="feature-list"><div class="feature-row"><span class="feature-icon">▣</span><div><b>Futuristic UI</b><br><small>Modern & Clean Design</small></div></div><div class="feature-row"><span class="feature-icon">⚡</span><div><b>Fast Performance</b><br><small>Lightweight Website</small></div></div><div class="feature-row"><span class="feature-icon">🛡</span><div><b>Secure & Private</b><br><small>Privacy First Design</small></div></div><div class="feature-row"><span class="feature-icon">🇮🇳</span><div><b>Made in India</b><br><small>For a Better Tomorrow</small></div></div></div>
-</div></section>
+<div class="grid" id="grid"></div>
+<div class="empty" id="empty">No services found. Try another search.</div>
 </main>
-<footer id="contact"><div class="container footer-row"><a class="brand" href="#home"><span class="flag">🇮🇳</span><span>AI FUSION<small>India's AI Powerhouse</small></span></a><div class="footer-links"><a href="#home">Home</a><a href="#tools">Tools</a><a href="#features">Features</a><a href="#about">About</a><a href="https://github.com/abhiprin6-gif/ai-fusion">GitHub</a></div><span>Jai Hind 🇮🇳</span></div></footer>
+
+<section id="about" style="max-width:1120px;margin:auto;padding:0 22px 65px">
+<div style="border:1px solid var(--line);border-radius:20px;background:var(--panel);padding:27px">
+<div style="color:#a99aff;font-size:11px;letter-spacing:2px;margin-bottom:12px">ABOUT THE ECOSYSTEM</div>
+<h2 style="margin:0 0 10px;font-size:25px">Everything starts with VIRAT.</h2>
+<p style="color:var(--muted);font-size:13px;line-height:1.8;max-width:650px;margin:0">A growing collection of digital service concepts with a single, consistent experience. Service cards are currently a front-end demo; connected AI, payments, accounts and admin features require separate backend implementation.</p>
+</div>
+</section>
+<footer><span><strong>VIRAT</strong> · DIGITAL ECOSYSTEM</span><span>One Platform. Endless Possibilities.</span><span>INSTANT PAY · Demo only</span></footer>
+
+<script>
+const services=[
+["VIRAT AI","Your everyday AI assistant","✦","AI"],["VIRAT Search","Explore the web","⌕","AI"],["Code Studio","Write and organize code","⌘","Work"],["Image Creator","Create visual concepts","▧","Create"],["Video Studio","Video creation workspace","▷","Create"],["Voice Studio","Voice and audio tools","♫","Create"],["Writing Studio","Draft and polish text","✎","Create"],["Logo Maker","Explore brand ideas","◈","Create"],["Photo Editor","Edit image concepts","▧","Create"],["Music Studio","Music creation workspace","♫","Create"],["Document Hub","Organize your documents","▤","Work"],["PDF Tools","PDF utility workspace","▧","Utility"],["Notes","Keep your ideas together","✎","Work"],["Task Manager","Organize daily tasks","☑","Work"],["Calendar","Plan your schedule","▦","Work"],["Cloud Drive","Your file workspace","☁","Work"],["Translator","Language assistance","文","Learn"],["Study Assistant","Support your learning","▣","Learn"],["Math Solver","Explore math problems","∑","Learn"],["Quiz Maker","Build practice quizzes","?", "Learn"],["Resume Builder","Prepare a professional CV","▤","Work"],["Presentation Maker","Plan slide presentations","▥","Work"],["Spreadsheet Tools","Work with tables","▦","Work"],["Grammar Checker","Review written text","✓","Learn"],["Web Builder","Create website concepts","⌘","Work"],["App Studio","Plan app interfaces","▣","Work"],["Data Analyzer","Explore your data","⌁","Work"],["QR Generator","Create QR code concepts","▦","Utility"],["Password Tools","Security utility hub","♙","Utility"],["Unit Converter","Convert common units","⇄","Utility"],["Weather Hub","Weather information hub","☼","Utility"],["World Clock","Track time zones","◷","Utility"],["Calculator","Everyday calculations","＋","Utility"],["File Converter","File conversion workspace","⇄","Utility"],["Expense Tracker","Organize spending","₹","Finance"],["INSTANT PAY","Payment interface demo","₹","Finance"],["Invoice Maker","Prepare invoice documents","▤","Finance"],["VIRAT Account","Account interface concept","◉","Work"],["VIRAT Labs","Discover future ideas","✧","AI"]
+];
+const grid=document.getElementById("grid"),search=document.getElementById("search"),count=document.getElementById("count"),empty=document.getElementById("empty");
+let active="All";
+function render(){
+const q=search.value.trim().toLowerCase();
+const list=services.filter(s=>(active==="All"||s[3]===active)&&(s[0]+" "+s[1]+" "+s[3]).toLowerCase().includes(q));
+grid.innerHTML=list.map(s=>`<article class="card" tabindex="0" data-name="${s[0]}"><div class="card-top"><span class="card-icon">${s[2]}</span><span class="arrow">↗</span></div><h3>${s[0]}</h3><p>${s[1]}</p><span class="tag">${s[3]==="AI"?"SMART TOOLS":s[3].toUpperCase()}</span></article>`).join("");
+count.textContent=list.length+" SERVICES";
+empty.style.display=list.length?"none":"block";
+grid.querySelectorAll(".card").forEach(card=>{const go=()=>{const n=card.dataset.name;alert(n+" is currently a front-end demo. Its full functionality can be connected in a future update.")};card.addEventListener("click",go);card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}})});
+}
+document.getElementById("filters").addEventListener("click",e=>{const b=e.target.closest("button[data-filter]");if(!b)return;active=b.dataset.filter;document.querySelectorAll("#filters button").forEach(x=>x.classList.toggle("active",x===b));render()});
+search.addEventListener("input",render);
+document.getElementById("clear").addEventListener("click",()=>{search.value="";active="All";document.querySelectorAll("#filters button").forEach(x=>x.classList.toggle("active",x.dataset.filter==="All"));render();search.focus()});
+document.getElementById("theme").addEventListener("click",()=>{const light=document.body.dataset.theme!=="light";document.body.dataset.theme=light?"light":"dark";if(light){document.documentElement.style.setProperty("--bg","#f5f6fb");document.documentElement.style.setProperty("--panel","#ffffff");document.documentElement.style.setProperty("--line","#e0e2ed");document.documentElement.style.setProperty("--text","#171827");document.documentElement.style.setProperty("--muted","#666b7d")}else{document.documentElement.style.setProperty("--bg","#08090d");document.documentElement.style.setProperty("--panel","#11131b");document.documentElement.style.setProperty("--line","#252836");document.documentElement.style.setProperty("--text","#f5f6ff");document.documentElement.style.setProperty("--muted","#969bad")}});
+render();
+</script>
 </body>
 </html>
