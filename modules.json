@@ -1,0 +1,201 @@
+{
+  "project": "VIRAT DIGITAL ECOSYSTEM",
+  "count": 39,
+  "modules": [
+    {
+      "id": 1,
+      "name": "V Search",
+      "status": "planned"
+    },
+    {
+      "id": 2,
+      "name": "VIRAT AI",
+      "status": "planned"
+    },
+    {
+      "id": 3,
+      "name": "Government",
+      "status": "planned"
+    },
+    {
+      "id": 4,
+      "name": "Career",
+      "status": "planned"
+    },
+    {
+      "id": 5,
+      "name": "Education",
+      "status": "planned"
+    },
+    {
+      "id": 6,
+      "name": "Drive",
+      "status": "planned"
+    },
+    {
+      "id": 7,
+      "name": "Videos",
+      "status": "planned"
+    },
+    {
+      "id": 8,
+      "name": "INSTANT PAY",
+      "status": "planned"
+    },
+    {
+      "id": 9,
+      "name": "VIRAT CSC",
+      "status": "planned"
+    },
+    {
+      "id": 10,
+      "name": "Business",
+      "status": "planned"
+    },
+    {
+      "id": 11,
+      "name": "Innovation",
+      "status": "planned"
+    },
+    {
+      "id": 12,
+      "name": "Research",
+      "status": "planned"
+    },
+    {
+      "id": 13,
+      "name": "Technology",
+      "status": "planned"
+    },
+    {
+      "id": 14,
+      "name": "Agriculture",
+      "status": "planned"
+    },
+    {
+      "id": 15,
+      "name": "Health",
+      "status": "planned"
+    },
+    {
+      "id": 16,
+      "name": "Local",
+      "status": "planned"
+    },
+    {
+      "id": 17,
+      "name": "Connect",
+      "status": "planned"
+    },
+    {
+      "id": 18,
+      "name": "Trust",
+      "status": "planned"
+    },
+    {
+      "id": 19,
+      "name": "Memory",
+      "status": "planned"
+    },
+    {
+      "id": 20,
+      "name": "Notifications",
+      "status": "planned"
+    },
+    {
+      "id": 21,
+      "name": "Admin",
+      "status": "planned"
+    },
+    {
+      "id": 22,
+      "name": "Developer Cloud",
+      "status": "planned"
+    },
+    {
+      "id": 23,
+      "name": "Opportunity Engine",
+      "status": "planned"
+    },
+    {
+      "id": 24,
+      "name": "VIRAT Citizen Problem Hub",
+      "status": "planned"
+    },
+    {
+      "id": 25,
+      "name": "V Maps",
+      "status": "planned"
+    },
+    {
+      "id": 26,
+      "name": "V Mail",
+      "status": "planned"
+    },
+    {
+      "id": 27,
+      "name": "V Docs",
+      "status": "planned"
+    },
+    {
+      "id": 28,
+      "name": "V Sheets",
+      "status": "planned"
+    },
+    {
+      "id": 29,
+      "name": "Slides",
+      "status": "planned"
+    },
+    {
+      "id": 30,
+      "name": "Calendar",
+      "status": "planned"
+    },
+    {
+      "id": 31,
+      "name": "V Meet",
+      "status": "planned"
+    },
+    {
+      "id": 32,
+      "name": "Browser",
+      "status": "planned"
+    },
+    {
+      "id": 33,
+      "name": "Account",
+      "status": "planned"
+    },
+    {
+      "id": 34,
+      "name": "Photos",
+      "status": "planned"
+    },
+    {
+      "id": 35,
+      "name": "V Translate",
+      "status": "planned"
+    },
+    {
+      "id": 36,
+      "name": "Voice",
+      "status": "planned"
+    },
+    {
+      "id": 37,
+      "name": "V AI Studio",
+      "status": "planned"
+    },
+    {
+      "id": 38,
+      "name": "News",
+      "status": "planned"
+    },
+    {
+      "id": 39,
+      "name": "Books & Research",
+      "status": "planned"
+    }
+  ]
+}
