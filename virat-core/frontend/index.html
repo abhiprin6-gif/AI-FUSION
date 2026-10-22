@@ -48,6 +48,13 @@ main{padding:20px;max-width:1100px;margin:auto}
 <button id="paydemo" style="padding:12px 18px;border:0;border-radius:9px;background:#65e6b1;color:#08131b;font-weight:bold">Preview Demo</button>
 <p id="payresult" style="white-space:pre-wrap;color:#c8d0ea"></p>
 </section>
+
+<section style="margin:22px 0;padding:18px;border:1px solid #303b59;border-radius:14px;background:#131a2c">
+<h2 style="margin-top:0;color:#a99bff">VIRAT CSC SERVICES</h2>
+<p style="color:#aeb9d5">Find a service and open its official website.</p>
+<input id="cscsearch" type="search" placeholder="Search government services..." style="width:100%;box-sizing:border-box;padding:13px;border-radius:10px;border:1px solid #303b59;background:#090d1b;color:white">
+<div id="cscitems" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;margin-top:14px"></div>
+</section>
 <div id="grid"></div>
 </main>
 <script>
@@ -84,6 +91,32 @@ document.getElementById('paydemo')?.addEventListener('click',()=>{
  if(!Number.isFinite(amount)||amount<=0){out.textContent='Please enter a valid amount.';return;}
  out.textContent='DEMO PREVIEW ONLY\\nAmount: ₹'+amount.toFixed(2)+'\\nNote: '+(note||'No note')+'\\nNo payment was made.';
 });
+\n
+const cscServices=[
+ ['DigiLocker','https://www.digilocker.gov.in/'],
+ ['UMANG','https://web.umang.gov.in/'],
+ ['UIDAI Aadhaar','https://uidai.gov.in/'],
+ ['PAN Services','https://www.incometax.gov.in/'],
+ ['Passport Seva','https://www.passportindia.gov.in/'],
+ ['EPFO','https://www.epfindia.gov.in/'],
+ ['National Career Service','https://www.ncs.gov.in/'],
+ ['MyScheme','https://www.myscheme.gov.in/']
+];
+function renderCSC(){
+ const q=(document.getElementById('cscsearch')?.value||'').toLowerCase();
+ const root=document.getElementById('cscitems');
+ if(!root)return;
+ root.replaceChildren();
+ cscServices.filter(x=>x[0].toLowerCase().includes(q)).forEach(x=>{
+  const a=document.createElement('a');
+  a.href=x[1];a.target='_blank';a.rel='noopener noreferrer';
+  a.textContent=x[0];
+  a.style.cssText='padding:14px;border:1px solid #303b59;border-radius:10px;color:#c8d0ea;text-decoration:none;background:#090d1b';
+  root.appendChild(a);
+ });
+}
+document.getElementById('cscsearch')?.addEventListener('input',renderCSC);
+renderCSC();
 \n</script>
 </body>
 </html>
