@@ -26,6 +26,10 @@ main{padding:20px;max-width:1100px;margin:auto}
 <main>
 <h2>Explore Services</h2>
 <div id="status">Connecting to VIRAT backend...</div>
+<div style="margin:18px 0;display:flex;gap:8px">
+<input id="vsearch" type="search" placeholder="Search the web with VIRAT..." style="flex:1;min-width:0;padding:14px;border-radius:10px;border:1px solid #303b59;background:#131a2c;color:white">
+<button id="vsearchbtn" style="padding:12px;border:0;border-radius:10px;background:#8b7cff;color:white;font-weight:bold">Search</button>
+</div>
 <div id="grid"></div>
 </main>
 <script>
@@ -39,6 +43,13 @@ document.getElementById('grid').innerHTML=data.modules.map(m=>
 })
 .catch(()=>{
 document.getElementById('status').textContent='Backend not connected. Start the API on port 3001.';
+});
+document.getElementById('vsearchbtn').addEventListener('click',()=>{
+ const q=document.getElementById('vsearch').value.trim();
+ if(q) window.open('https://www.google.com/search?q='+encodeURIComponent(q),'_blank');
+});
+document.getElementById('vsearch').addEventListener('keydown',e=>{
+ if(e.key==='Enter') document.getElementById('vsearchbtn').click();
 });
 </script>
 </body>
