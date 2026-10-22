@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VIRAT | Digital Ecosystem</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090d1b;color:#f5f7ff;font-family:Arial,sans-serif}
+header{padding:24px 18px;background:linear-gradient(120deg,#171b40,#102e40);border-bottom:1px solid #343b61}
+h1{margin:0;color:#a99bff;font-size:28px}
+header p{color:#c2c8e8}
+main{padding:20px;max-width:1100px;margin:auto}
+#status{color:#65e6b1;margin-bottom:18px}
+#grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:13px}
+.panel{background:#131a2c;border:1px solid #303b59;border-radius:14px;padding:19px 13px;min-height:95px}
+.panel strong{display:block;margin-bottom:9px}
+.panel small{color:#9daac9}
+</style>
+</head>
+<body>
+<header>
+<h1>VIRAT</h1>
+<p>Digital Ecosystem · One Platform. Endless Possibilities.</p>
+</header>
+<main>
+<h2>Explore Services</h2>
+<div id="status">Connecting to VIRAT backend...</div>
+<div id="grid"></div>
+</main>
+<script>
+fetch('modules.json')
+.then(r=>r.json())
+.then(data=>{
+document.getElementById('status').textContent=data.count+' services listed · Backend connected';
+document.getElementById('grid').innerHTML=data.modules.map(m=>
+'<div class="panel"><strong>'+m.name+'</strong><small>'+m.status+'</small></div>'
+).join('');
+})
+.catch(()=>{
+document.getElementById('status').textContent='Backend not connected. Start the API on port 3001.';
+});
+</script>
+</body>
+</html>
