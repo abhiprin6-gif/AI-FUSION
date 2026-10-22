@@ -30,6 +30,13 @@ main{padding:20px;max-width:1100px;margin:auto}
 <input id="vsearch" type="search" placeholder="Search the web with VIRAT..." style="flex:1;min-width:0;padding:14px;border-radius:10px;border:1px solid #303b59;background:#131a2c;color:white">
 <button id="vsearchbtn" style="padding:12px;border:0;border-radius:10px;background:#8b7cff;color:white;font-weight:bold">Search</button>
 </div>
+<section style="margin:22px 0;padding:18px;border:1px solid #303b59;border-radius:14px;background:#131a2c">
+<h2 style="margin-top:0;color:#a99bff">VIRAT AI</h2>
+<p style="color:#aeb9d5">Ask a question to prepare your prompt.</p>
+<textarea id="aiquestion" rows="3" placeholder="Type your question..." style="width:100%;box-sizing:border-box;padding:13px;border-radius:10px;background:#090d1b;color:white;border:1px solid #303b59"></textarea>
+<button id="aibtn" style="margin-top:10px;padding:12px 18px;border:0;border-radius:9px;background:#8b7cff;color:white;font-weight:bold">Ask VIRAT AI</button>
+<p id="airesult" style="white-space:pre-wrap;color:#c8d0ea"></p>
+</section>
 <div id="grid"></div>
 </main>
 <script>
@@ -51,6 +58,13 @@ document.getElementById('vsearchbtn').addEventListener('click',()=>{
 document.getElementById('vsearch').addEventListener('keydown',e=>{
  if(e.key==='Enter') document.getElementById('vsearchbtn').click();
 });
-</script>
+
+document.getElementById('aibtn')?.addEventListener('click',()=>{
+ const q=document.getElementById('aiquestion').value.trim();
+ document.getElementById('airesult').textContent=q
+ ? 'Your prompt is ready. AI answers are not connected yet.\n\nQuestion: '+q
+ : 'Please type a question first.';
+});
+\n</script>
 </body>
 </html>
