@@ -39,6 +39,8 @@ app.get("/api/modules", (req, res) => {
   });
 });
 
+app.use('/api/modules', require('./routes/modules'));
+
 app.listen(PORT, "127.0.0.1", () => {
   console.log(`VIRAT API running at http://127.0.0.1:${PORT}`);
 });
