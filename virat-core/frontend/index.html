@@ -37,6 +37,17 @@ main{padding:20px;max-width:1100px;margin:auto}
 <button id="aibtn" style="margin-top:10px;padding:12px 18px;border:0;border-radius:9px;background:#8b7cff;color:white;font-weight:bold">Ask VIRAT AI</button>
 <p id="airesult" style="white-space:pre-wrap;color:#c8d0ea"></p>
 </section>
+
+<section style="margin:22px 0;padding:18px;border:1px solid #303b59;border-radius:14px;background:#131a2c">
+<h2 style="color:#65e6b1;margin-top:0">INSTANT PAY</h2>
+<p style="color:#aeb9d5">Secure payment demo — no real money is transferred.</p>
+<label for="payamount">Amount (₹)</label>
+<input id="payamount" type="number" min="1" max="100000" placeholder="Enter amount" style="display:block;width:100%;box-sizing:border-box;margin:8px 0 12px;padding:13px;border-radius:9px;background:#090d1b;color:white;border:1px solid #303b59">
+<label for="paynote">Payment note</label>
+<input id="paynote" maxlength="100" placeholder="What is this payment for?" style="display:block;width:100%;box-sizing:border-box;margin:8px 0 12px;padding:13px;border-radius:9px;background:#090d1b;color:white;border:1px solid #303b59">
+<button id="paydemo" style="padding:12px 18px;border:0;border-radius:9px;background:#65e6b1;color:#08131b;font-weight:bold">Preview Demo</button>
+<p id="payresult" style="white-space:pre-wrap;color:#c8d0ea"></p>
+</section>
 <div id="grid"></div>
 </main>
 <script>
@@ -64,6 +75,14 @@ document.getElementById('aibtn')?.addEventListener('click',()=>{
  document.getElementById('airesult').textContent=q
  ? 'Your prompt is ready. AI answers are not connected yet.\n\nQuestion: '+q
  : 'Please type a question first.';
+});
+\n
+document.getElementById('paydemo')?.addEventListener('click',()=>{
+ const amount=Number(document.getElementById('payamount').value);
+ const note=document.getElementById('paynote').value.trim();
+ const out=document.getElementById('payresult');
+ if(!Number.isFinite(amount)||amount<=0){out.textContent='Please enter a valid amount.';return;}
+ out.textContent='DEMO PREVIEW ONLY\\nAmount: ₹'+amount.toFixed(2)+'\\nNote: '+(note||'No note')+'\\nNo payment was made.';
 });
 \n</script>
 </body>
