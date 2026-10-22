@@ -2,121 +2,63 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>VIRAT | Digital Ecosystem</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#090d1b;color:#f5f7ff;font-family:Arial,sans-serif}
-header{padding:24px 18px;background:linear-gradient(120deg,#171b40,#102e40);border-bottom:1px solid #343b61}
-h1{margin:0;color:#a99bff;font-size:28px}
-header p{color:#c2c8e8}
-main{padding:20px;max-width:1100px;margin:auto}
-#status{color:#65e6b1;margin-bottom:18px}
-#grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:13px}
-.panel{background:#131a2c;border:1px solid #303b59;border-radius:14px;padding:19px 13px;min-height:95px}
-.panel strong{display:block;margin-bottom:9px}
-.panel small{color:#9daac9}
+:root{--bg:#03091a;--panel:#07152d;--line:#183c65;--text:#f3f6ff;--muted:#a9bce0;--blue:#5545ff}
+body{margin:0;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}
+header{height:76px;display:flex;align-items:center;gap:16px;padding:12px 22px;border-bottom:1px solid var(--line);background:#06112a;position:sticky;top:0;z-index:2}
+.brand{font-size:28px;font-weight:900;color:#a99aff;letter-spacing:2px}
+.tag{color:#c8d5f8;border-left:1px solid #51618b;padding-left:18px}
+.layout{display:flex;min-height:calc(100vh - 76px)}
+aside{width:205px;flex-shrink:0;border-right:1px solid var(--line);padding:18px 12px;background:#040c1d}
+aside a{display:block;color:#dce6ff;text-decoration:none;padding:13px 12px;border-radius:9px;margin-bottom:5px}
+aside a:first-child{background:#4944e9}
+main{padding:18px;min-width:0;flex:1}
+.banner{min-height:155px;border:1px solid #24517b;border-radius:12px;padding:25px;text-align:center;background:linear-gradient(110deg,#092a36,#09142e 45%,#65401e 70%,#0c5937);overflow:hidden}
+.banner h1{font-size:clamp(30px,5vw,54px);margin:0 0 6px}
+.banner p{margin:0;font-size:17px}
+.search{display:flex;gap:8px;margin:16px 0}
+input{min-width:0;flex:1;background:#06132a;border:1px solid #24466d;border-radius:10px;padding:14px;color:white;font-size:15px}
+button{background:#5545ff;color:white;border:0;border-radius:9px;padding:0 20px;font-weight:bold}
+h2{font-size:20px;margin:20px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.card{background:linear-gradient(140deg,#081a35,#061126);border:1px solid var(--line);border-radius:11px;padding:13px;min-height:110px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:11px;min-width:0}
+.card img{width:39px;height:39px;object-fit:contain;background:white;border-radius:9px;padding:4px;flex-shrink:0}
+.card strong{display:block;overflow-wrap:anywhere;font-size:14px}
+.card small{display:block;color:var(--muted);margin-top:7px}
+.status{color:#22d9a2;font-size:12px;margin-top:8px}
+footer{color:#8297bd;text-align:center;padding:25px}
+@media(max-width:950px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}aside{width:165px}}
+@media(max-width:620px){header{height:auto;padding:14px}.tag{font-size:12px}.layout{display:block}aside{width:100%;display:flex;overflow-x:auto;padding:8px;border-right:0;border-bottom:1px solid var(--line)}aside a{white-space:nowrap;margin:0 4px;padding:11px}main{padding:12px}.banner{min-height:130px;padding:22px 10px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:10px;min-height:95px;gap:8px}.card img{width:32px;height:32px}.card strong{font-size:12px}}
 </style>
 </head>
 <body>
-<header>
-<h1>VIRAT</h1>
-<p>Digital Ecosystem · One Platform. Endless Possibilities.</p>
-</header>
+<header><div class="brand">◈ VIRAT</div><div class="tag">One Platform. Endless Possibilities.</div></header>
+<div class="layout">
+<aside>
+<a href="#">⌂ Home</a><a href="#services">▦ All Services</a><a href="#services">✧ AI Tools</a><a href="#csc">▤ CSC Services</a><a href="#pay">▣ Payment</a><a href="#services">◆ Education</a><a href="#services">☁ Drive</a><a href="#services">▶ Videos</a><a href="#services">♧ Social Media</a><a href="#csc">▤ Government</a>
+</aside>
 <main>
-<h2>Explore Services</h2>
-<div id="status">Connecting to VIRAT backend...</div>
-<div style="margin:18px 0;display:flex;gap:8px">
-<input id="vsearch" type="search" placeholder="Search the web with VIRAT..." style="flex:1;min-width:0;padding:14px;border-radius:10px;border:1px solid #303b59;background:#131a2c;color:white">
-<button id="vsearchbtn" style="padding:12px;border:0;border-radius:10px;background:#8b7cff;color:white;font-weight:bold">Search</button>
-</div>
-<section style="margin:22px 0;padding:18px;border:1px solid #303b59;border-radius:14px;background:#131a2c">
-<h2 style="margin-top:0;color:#a99bff">VIRAT AI</h2>
-<p style="color:#aeb9d5">Ask a question to prepare your prompt.</p>
-<textarea id="aiquestion" rows="3" placeholder="Type your question..." style="width:100%;box-sizing:border-box;padding:13px;border-radius:10px;background:#090d1b;color:white;border:1px solid #303b59"></textarea>
-<button id="aibtn" style="margin-top:10px;padding:12px 18px;border:0;border-radius:9px;background:#8b7cff;color:white;font-weight:bold">Ask VIRAT AI</button>
-<p id="airesult" style="white-space:pre-wrap;color:#c8d0ea"></p>
-</section>
-
-<section style="margin:22px 0;padding:18px;border:1px solid #303b59;border-radius:14px;background:#131a2c">
-<h2 style="color:#65e6b1;margin-top:0">INSTANT PAY</h2>
-<p style="color:#aeb9d5">Secure payment demo — no real money is transferred.</p>
-<label for="payamount">Amount (₹)</label>
-<input id="payamount" type="number" min="1" max="100000" placeholder="Enter amount" style="display:block;width:100%;box-sizing:border-box;margin:8px 0 12px;padding:13px;border-radius:9px;background:#090d1b;color:white;border:1px solid #303b59">
-<label for="paynote">Payment note</label>
-<input id="paynote" maxlength="100" placeholder="What is this payment for?" style="display:block;width:100%;box-sizing:border-box;margin:8px 0 12px;padding:13px;border-radius:9px;background:#090d1b;color:white;border:1px solid #303b59">
-<button id="paydemo" style="padding:12px 18px;border:0;border-radius:9px;background:#65e6b1;color:#08131b;font-weight:bold">Preview Demo</button>
-<p id="payresult" style="white-space:pre-wrap;color:#c8d0ea"></p>
-</section>
-
-<section style="margin:22px 0;padding:18px;border:1px solid #303b59;border-radius:14px;background:#131a2c">
-<h2 style="margin-top:0;color:#a99bff">VIRAT CSC SERVICES</h2>
-<p style="color:#aeb9d5">Find a service and open its official website.</p>
-<input id="cscsearch" type="search" placeholder="Search government services..." style="width:100%;box-sizing:border-box;padding:13px;border-radius:10px;border:1px solid #303b59;background:#090d1b;color:white">
-<div id="cscitems" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;margin-top:14px"></div>
-</section>
-<div id="grid"></div>
+<section class="banner"><h1>VIRAT 🇮🇳</h1><p>DIGITAL ECOSYSTEM</p><p>One Platform. Endless Possibilities.</p></section>
+<div class="search"><input id="search" placeholder="Search VIRAT services..." aria-label="Search services"><button id="searchBtn">Search</button></div>
+<h2>Featured Services</h2><div id="featured" class="grid"></div>
+<h2 id="services">All 39 Services</h2><div id="all" class="grid"></div>
+<h2 id="csc">Government & CSC Services</h2><div id="government" class="grid"></div>
+<h2 id="pay">INSTANT PAY</h2><div class="card"><img alt="UPI logo" src="https://www.google.com/s2/favicons?domain=www.npci.org.in&sz=128"><div><strong>INSTANT PAY</strong><small>Payment demo only — no money transferred</small><div class="status">DEMO</div></div></div>
+<footer>VIRAT DIGITAL ECOSYSTEM · Made for Digital India</footer>
 </main>
+</div>
 <script>
-fetch('modules.json')
-.then(r=>r.json())
-.then(data=>{
-document.getElementById('status').textContent=data.count+' services listed · Backend connected';
-document.getElementById('grid').innerHTML=data.modules.map(m=>
-'<div class="panel"><strong>'+m.name+'</strong><small>'+m.status+'</small></div>'
-).join('');
-})
-.catch(()=>{
-document.getElementById('status').textContent='Backend not connected. Start the API on port 3001.';
-});
-document.getElementById('vsearchbtn').addEventListener('click',()=>{
- const q=document.getElementById('vsearch').value.trim();
- if(q) window.open('https://www.google.com/search?q='+encodeURIComponent(q),'_blank');
-});
-document.getElementById('vsearch').addEventListener('keydown',e=>{
- if(e.key==='Enter') document.getElementById('vsearchbtn').click();
-});
-
-document.getElementById('aibtn')?.addEventListener('click',()=>{
- const q=document.getElementById('aiquestion').value.trim();
- document.getElementById('airesult').textContent=q
- ? 'Your prompt is ready. AI answers are not connected yet.\n\nQuestion: '+q
- : 'Please type a question first.';
-});
-\n
-document.getElementById('paydemo')?.addEventListener('click',()=>{
- const amount=Number(document.getElementById('payamount').value);
- const note=document.getElementById('paynote').value.trim();
- const out=document.getElementById('payresult');
- if(!Number.isFinite(amount)||amount<=0){out.textContent='Please enter a valid amount.';return;}
- out.textContent='DEMO PREVIEW ONLY\\nAmount: ₹'+amount.toFixed(2)+'\\nNote: '+(note||'No note')+'\\nNo payment was made.';
-});
-\n
-const cscServices=[
- ['DigiLocker','https://www.digilocker.gov.in/'],
- ['UMANG','https://web.umang.gov.in/'],
- ['UIDAI Aadhaar','https://uidai.gov.in/'],
- ['PAN Services','https://www.incometax.gov.in/'],
- ['Passport Seva','https://www.passportindia.gov.in/'],
- ['EPFO','https://www.epfindia.gov.in/'],
- ['National Career Service','https://www.ncs.gov.in/'],
- ['MyScheme','https://www.myscheme.gov.in/']
-];
-function renderCSC(){
- const q=(document.getElementById('cscsearch')?.value||'').toLowerCase();
- const root=document.getElementById('cscitems');
- if(!root)return;
- root.replaceChildren();
- cscServices.filter(x=>x[0].toLowerCase().includes(q)).forEach(x=>{
-  const a=document.createElement('a');
-  a.href=x[1];a.target='_blank';a.rel='noopener noreferrer';
-  a.textContent=x[0];
-  a.style.cssText='padding:14px;border:1px solid #303b59;border-radius:10px;color:#c8d0ea;text-decoration:none;background:#090d1b';
-  root.appendChild(a);
- });
-}
-document.getElementById('cscsearch')?.addEventListener('input',renderCSC);
-renderCSC();
-\n</script>
+const services=[
+['V Search','google.com','Web Search'],['VIRAT AI','openai.com','AI Assistant'],['Government','india.gov.in','Government Services'],['Career','ncs.gov.in','Jobs & Career'],['Education','diksha.gov.in','Learning Platform'],['Drive','drive.google.com','Cloud Storage'],['Videos','youtube.com','Video Streaming'],['INSTANT PAY','npci.org.in','Payments'],['VIRAT CSC','csc.gov.in','Digital Services'],['Business','startupindia.gov.in','Business'],['Innovation','aim.gov.in','Innovation'],['Research','india.gov.in','Research'],['Technology','meity.gov.in','Technology'],['Agriculture','agriwelfare.gov.in','Agriculture'],['Health','mohfw.gov.in','Health'],['Local','india.gov.in','Local Services'],['Connect','whatsapp.com','Messaging'],['Trust','india.gov.in','Trust'],['Memory','google.com','Personal Workspace'],['Notifications','google.com','Notifications'],['Admin','github.com','Admin Console'],['Developer Cloud','github.com','Developer Tools'],['Opportunity Engine','ncs.gov.in','Opportunities'],['VIRAT Citizen Problem Hub','pgportal.gov.in','Public Grievances'],['V Maps','maps.google.com','Maps & Navigation'],['V Mail','gmail.com','Email'],['V Docs','docs.google.com','Documents'],['V Sheets','sheets.google.com','Spreadsheets'],['Slides','slides.google.com','Presentations'],['Calendar','calendar.google.com','Calendar'],['V Meet','meet.google.com','Video Meetings'],['Browser','google.com','Web Browser'],['Account','myaccount.google.com','Account'],['Photos','photos.google.com','Photos'],['V Translate','translate.google.com','Translation'],['Voice','microsoft.com','Voice Tools'],['V AI Studio','aistudio.google.com','AI Studio'],['News','news.google.com','News'],['Books & Research','books.google.com','Books & Research']];
+const featuredNames=['V Search','VIRAT AI','VIRAT CSC','INSTANT PAY','Education','Drive'];
+const govNames=['DigiLocker','UMANG','UIDAI Aadhaar','PAN Services','Passport Seva','National Career Service','MyScheme'];
+const gov=[['DigiLocker','digilocker.gov.in'],['UMANG','web.umang.gov.in'],['UIDAI Aadhaar','uidai.gov.in'],['PAN Services','incometax.gov.in'],['Passport Seva','passportindia.gov.in'],['National Career Service','ncs.gov.in'],['MyScheme','myscheme.gov.in']];
+function card(name,domain,desc){const a=document.createElement('a');a.className='card';a.href='https://'+domain;a.target='_blank';a.rel='noopener noreferrer';const img=document.createElement('img');img.loading='lazy';img.alt=name+' logo';img.src='https://www.google.com/s2/favicons?domain='+encodeURIComponent(domain)+'&sz=128';const d=document.createElement('div');const b=document.createElement('strong');b.textContent=name;const sm=document.createElement('small');sm.textContent=desc;const st=document.createElement('div');st.className='status';st.textContent='● Listed';d.append(b,sm,st);a.append(img,d);return a}
+function draw(){const q=document.getElementById('search').value.toLowerCase().trim();const all=document.getElementById('all');all.replaceChildren();services.filter(x=>(x[0]+' '+x[2]).toLowerCase().includes(q)).forEach(x=>all.append(card(...x)));const f=document.getElementById('featured');f.replaceChildren();services.filter(x=>featuredNames.includes(x[0])&&(x[0]+' '+x[2]).toLowerCase().includes(q)).forEach(x=>f.append(card(...x)));const g=document.getElementById('government');g.replaceChildren();gov.filter(x=>x[0].toLowerCase().includes(q)).forEach(x=>g.append(card(x[0],x[1],'Official website')))}
+document.getElementById('search').addEventListener('input',draw);document.getElementById('searchBtn').addEventListener('click',draw);draw();
+</script>
 </body>
 </html>
