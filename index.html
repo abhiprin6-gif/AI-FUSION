@@ -1,119 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#08090d">
-<title>VIRAT — Digital Ecosystem</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#031126">
+<title>AI FUSION | Bharat ka AI Platform</title>
 <style>
-:root{color-scheme:dark;--bg:#08090d;--panel:#11131b;--line:#252836;--text:#f5f6ff;--muted:#969bad;--accent:#8b7cff;--cyan:#5be7ff}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif}
-button,input{font:inherit}
-button,a{-webkit-tap-highlight-color:transparent}
-a{color:inherit;text-decoration:none}
-header{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;border-bottom:1px solid var(--line);background:#08090deF;position:sticky;top:0;z-index:10;backdrop-filter:blur(18px)}
-.brand{display:flex;align-items:center;gap:11px;font-size:21px;font-weight:850;letter-spacing:1px}
-.brand-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--cyan));color:#08090d;font-size:23px}
-.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:3px;margin-top:2px}
-.header-actions{display:flex;gap:10px}
-.btn{border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--text);padding:10px 15px;cursor:pointer}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:white;font-weight:700}
-.hero{padding:76px 20px 48px;text-align:center;max-width:900px;margin:auto}
-.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid #37334f;border-radius:30px;padding:8px 14px;color:#c4bcff;font-size:12px;background:#151223}
-.dot{width:7px;height:7px;border-radius:50%;background:#67f5bd}
-h1{font-size:clamp(43px,8vw,82px);line-height:1.02;letter-spacing:-4px;margin:25px 0 18px}
-.gradient{background:linear-gradient(90deg,#a99aff,#5be7ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{max-width:590px;margin:0 auto;color:var(--muted);font-size:16px;line-height:1.8}
-.hero-actions{display:flex;justify-content:center;gap:12px;margin-top:28px;flex-wrap:wrap}
-.stats{display:flex;justify-content:center;gap:35px;margin-top:37px;color:var(--muted);font-size:12px;flex-wrap:wrap}
-.stats strong{color:var(--text);font-size:15px}
-main{max-width:1120px;margin:auto;padding:0 22px 70px}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:24px 0}
-.section-head h2{font-size:25px;margin:0 0 7px;letter-spacing:-.7px}
-.section-head p{margin:0;color:var(--muted);font-size:13px}
-.count{color:var(--muted);font-size:12px}
-.search-wrap{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:0 15px;margin-bottom:17px}
-.search-wrap span{font-size:19px;color:var(--muted)}
-.search-wrap input{width:100%;background:transparent;border:0;outline:0;color:var(--text);padding:16px 0}
-.filters{display:flex;gap:8px;overflow-x:auto;padding:2px 0 18px;scrollbar-width:none}
-.filters button{white-space:nowrap;border:1px solid var(--line);background:transparent;color:var(--muted);padding:9px 14px;border-radius:30px;cursor:pointer;font-size:12px}
-.filters button.active{background:#211d3b;border-color:#6555bb;color:#e2dcff}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
-.card{min-height:154px;padding:19px;border:1px solid var(--line);background:linear-gradient(145deg,#141621,#0e1017);border-radius:17px;transition:transform .2s,border-color .2s;cursor:pointer}
-.card:hover{transform:translateY(-3px);border-color:#7162b9}
-.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px}
-.card-icon{width:43px;height:43px;display:grid;place-items:center;border:1px solid #343044;border-radius:13px;background:#211d30;font-size:22px}
-.arrow{color:#686d81}
-.card h3{font-size:14px;margin:0 0 7px}
-.card p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}
-.tag{display:inline-block;font-size:9px;color:#b9afff;background:#211d36;padding:4px 7px;border-radius:5px;margin-top:11px}
-.empty{display:none;text-align:center;color:var(--muted);padding:45px}
-footer{border-top:1px solid var(--line);padding:25px 6%;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:var(--muted);font-size:11px}
-footer strong{color:var(--text)}
-@media(max-width:850px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:600px){header{height:64px;padding:0 16px}.brand{font-size:17px}.brand-icon{width:34px;height:34px}.header-actions .btn{padding:9px 11px;font-size:12px}.hero{padding:60px 19px 38px}h1{letter-spacing:-2px}.hero p{font-size:14px}.stats{gap:17px}.stats strong{font-size:13px}main{padding:0 15px 50px}.section-head h2{font-size:22px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{padding:14px;min-height:151px}.card-icon{width:39px;height:39px}footer{padding:22px 16px}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#020b19;color:#f5f8ff;font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}.top{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 4%;background:#041329;border-bottom:1px solid #00cfff55;position:relative;z-index:2}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:24px}.flag{width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(#ff8c00 33%,white 33% 66%,#138808 66%);color:#063c91;font-size:22px}.brand small{display:block;font-size:11px;font-weight:500;margin-top:3px}.brand strong{background:linear-gradient(90deg,#ff9c00,#fff,#48c9ff);background-clip:text;color:transparent}nav{display:flex;gap:22px;font-size:14px;font-weight:bold}nav a:first-child{color:#00ffb7}.premium{padding:11px 20px;border:1px solid #ffbd00;border-radius:28px;box-shadow:0 0 14px #ffac00;background:#17152a;font-weight:bold}.hero{min-height:420px;padding:35px 4%;display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative;overflow:hidden;background:#051631}.hero:before{content:"";position:absolute;inset:-35% -15%;background:linear-gradient(178deg,transparent 13%,#ff8500 21%,#ffbd46 29%,#fff 37%,#d9f6ff 43%,#138808 53%,#00e879 62%,transparent 75%);transform:rotate(-5deg);animation:wave 7s ease-in-out infinite alternate;filter:drop-shadow(0 0 18px #ff9b00)}.hero:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(170deg,transparent 0 35px,#ffffff25 39px,transparent 44px 72px);pointer-events:none}.herotext,.orbarea{position:relative;z-index:1}.herotext{max-width:500px}.pill{display:inline-block;border:1px solid #ffb400;border-radius:24px;padding:8px 13px;background:#041329d9;font-size:13px}.herotext h1{font-size:clamp(42px,6vw,66px);line-height:.98;margin:17px 0 8px;letter-spacing:-2px}.tricolor{background:linear-gradient(90deg,#ff9200,#fff,#20ff99);background-clip:text;color:transparent}.herotext h2{font-size:clamp(24px,3vw,34px);margin:10px 0}.herotext p{line-height:1.5}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.btn{padding:13px 22px;border-radius:28px;background:linear-gradient(100deg,#00ff91,#ffb500);font-weight:bold;box-shadow:0 0 18px #00ff8b66}.btn.alt{background:#03162deF;border:1px solid #00dfff;box-shadow:0 0 13px #00dfff55}.orbarea{flex:0 0 min(40%,360px);min-height:310px;display:grid;place-items:center}.chakra{position:absolute;width:145px;height:145px;top:0;right:5%;border:6px solid #0744b8;border-radius:50%;background:repeating-conic-gradient(#0744b8 0 3deg,transparent 3deg 15deg);box-shadow:0 0 18px #8ceaff}.chakra:after{content:"";position:absolute;inset:13px;background:#eaf8ff;border:5px solid #0744b8;border-radius:50%}.chakra:before{content:"";position:absolute;z-index:1;width:20px;height:20px;left:50%;top:50%;transform:translate(-50%,-50%);background:#0744b8;border-radius:50%}.orb{width:min(70vw,265px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;position:relative;background:radial-gradient(circle at 35% 25%,#1269d4,#06112d 58%,#010614);border:3px solid #00dfff;box-shadow:0 0 25px #00dfff,inset 0 0 35px #205dff}.orb:before,.orb:after{content:"";position:absolute;inset:-13px;border:5px solid transparent;border-top-color:#ff8b00;border-bottom-color:#00ff8b;border-radius:50%;animation:spin 6s linear infinite}.orb:after{inset:-22px;border-top-color:#00e5ff;border-bottom-color:#ff29e7;animation-direction:reverse;animation-duration:8s}.orb span{font-family:Arial Black,Impact,sans-serif;font-size:clamp(110px,19vw,175px);font-weight:900;font-style:italic;background:linear-gradient(135deg,#fff,#27f6ff 42%,#a263ff 70%,#ffb600);background-clip:text;color:transparent;filter:drop-shadow(0 0 13px #00dfff)}@keyframes wave{to{transform:translateX(3%) rotate(-2deg) skewY(2deg)}}@keyframes spin{to{transform:rotate(360deg)}}.stats{max-width:1150px;margin:0 auto 25px;display:grid;grid-template-columns:repeat(4,1fr);padding:15px;background:#03182bed;border:1px solid #00dfff;border-radius:15px;box-shadow:0 0 17px #00bfff55}.stat{text-align:center;border-right:1px solid #00bfff55;padding:5px}.stat:last-child{border:0}.stat b{display:block;font-size:22px}.stat span{font-size:13px;color:#d1e7ff}.heading{text-align:center;margin:25px 0 8px;font-size:clamp(28px,4vw,40px)}.sub{text-align:center;color:#c6ddf7;margin:0 0 25px}.panels{max-width:1250px;margin:auto;padding:0 20px 28px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.panel{--c:#00dfff;display:flex;flex-direction:column;min-width:0;padding:15px;border:1px solid var(--c);border-radius:15px;background:radial-gradient(ellipse at top left,color-mix(in srgb,var(--c) 17%,transparent),transparent 68%),linear-gradient(145deg,#061b32,#020918);box-shadow:0 0 12px color-mix(in srgb,var(--c) 48%,transparent);transition:.2s}.panel:hover{box-shadow:0 0 22px color-mix(in srgb,var(--c) 75%,transparent);transform:translateY(-2px)}.panelhead{display:flex;align-items:center;gap:12px;min-height:66px;margin-bottom:13px}.panelicon{width:58px;height:58px;flex:0 0 58px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--c);font-size:29px;box-shadow:0 0 13px var(--c)}.paneltitle{flex:1;min-width:0}.paneltitle h3{font-size:20px;margin:0 0 5px}.paneltitle p{font-size:12px;margin:0;color:#d5e8ff;line-height:1.4}.services-count{font-size:11px;white-space:nowrap;border:1px solid var(--c);padding:5px 8px;border-radius:18px;margin-top:auto}.servicegrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:auto}.service{min-width:0;min-height:76px;padding:9px 4px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;text-align:center;border:1px solid color-mix(in srgb,var(--c) 65%,#21415c);border-radius:10px;background:#04152be8;font-size:12px;overflow-wrap:anywhere;cursor:pointer}.service:hover{background:color-mix(in srgb,var(--c) 15%,#04152b);box-shadow:0 0 12px var(--c)}.serviceicon{height:30px;width:30px;display:grid;place-items:center;font-size:23px;color:var(--c);font-weight:bold;text-shadow:0 0 10px var(--c)}.serviceicon img{width:27px;height:27px;object-fit:contain}.service{height:76px;min-height:76px}.service span:last-child{line-height:1.2}.banner{max-width:1200px;margin:0 auto 24px;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;border:1px solid #00dfff;border-radius:15px;background:#03162beF;box-shadow:0 0 14px #00cfff44}.banner h3{margin:0 0 5px}.banner p{margin:0;color:#cde6ff;font-size:13px}.checks{display:flex;gap:14px;flex-wrap:wrap;font-size:12px}.checks span:before{content:"✓";color:#00ff9c;font-weight:bold;margin-right:5px}footer{padding:22px 4%;border-top:1px solid #00bfff55;background:#031126;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}footer nav{gap:17px}.social{letter-spacing:5px;color:#cceaff;font-size:17px}.copyright{width:100%;text-align:center;font-size:11px;color:#8ca8c8}@media(max-width:850px){nav{gap:12px}.premium{display:none}.panels{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-top:30px}.orbarea{flex-basis:36%}.chakra{width:110px;height:110px}.stats{margin-left:12px;margin-right:12px}}@media(max-width:560px){.top{flex-wrap:wrap}.brand{font-size:20px}nav{order:3;width:100%;justify-content:space-between;font-size:12px}.hero{display:block;padding:30px 5% 25px}.herotext h1{font-size:46px}.orbarea{min-height:260px;margin-top:12px}.orb{width:200px}.chakra{right:13%;width:100px;height:100px}.stats{grid-template-columns:repeat(2,1fr);gap:10px}.stat:nth-child(2){border:0}.stat:nth-child(3),.stat:nth-child(4){border-top:1px solid #00bfff55;padding-top:12px}.panels{grid-template-columns:1fr;padding:0 13px 25px;gap:14px}.panel{min-height:285px}.service{min-height:76px}.banner{margin:0 13px 22px}.banner .btn{width:100%;text-align:center}footer{justify-content:center;text-align:center}footer nav{width:100%;justify-content:center;flex-wrap:wrap}.social{width:100%}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<header>
-<a class="brand" href="#"><span class="brand-icon">V</span><span>VIRAT<small>DIGITAL ECOSYSTEM</small></span></a>
-<div class="header-actions"><button class="btn" id="theme" aria-label="Toggle theme">☼</button><a class="btn primary" href="#services">Explore ↗</a></div>
+<header class="top">
+<a href="#" class="brand"><span class="flag">☸</span><span><strong>AI FUSION</strong><small>India's AI Powerhouse</small></span></a>
+<nav><a href="#">Home</a><a href="#panels">Panels</a><a href="#panels">Services</a><a href="#about">About</a><a href="#footer">Contact</a></nav>
+<a class="premium" href="#panels">👑 Premium</a>
 </header>
-
 <section class="hero">
-<div class="eyebrow"><span class="dot"></span> ONE PLATFORM · ENDLESS POSSIBILITIES</div>
-<h1>Your Digital World,<br><span class="gradient">One VIRAT Platform.</span></h1>
-<p>A unified digital ecosystem designed to bring your everyday online tools together in one clean, modern experience.</p>
-<div class="hero-actions"><a href="#services" class="btn primary">Explore Services ↗</a><a href="#about" class="btn">Discover VIRAT</a></div>
-<div class="stats"><span><strong>39+</strong> Service Ideas</span><span><strong>01</strong> Unified Platform</span><span><strong>∞</strong> Possibilities</span></div>
-</section>
-
-<main id="services">
-<div class="section-head"><div><h2>Explore Services</h2><p>Find the right tool for what you want to do.</p></div><span class="count" id="count">39 SERVICES</span></div>
-<div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search services..." autocomplete="off"><button class="btn" id="clear">Clear</button></div>
-<div class="filters" id="filters">
-<button class="active" data-filter="All">All Services</button>
-<button data-filter="AI">AI & Smart</button>
-<button data-filter="Create">Creative</button>
-<button data-filter="Work">Productivity</button>
-<button data-filter="Learn">Learning</button>
-<button data-filter="Utility">Utilities</button>
-<button data-filter="Finance">Finance</button>
+<div class="herotext">
+<div class="pill">🇮🇳 Made in India &nbsp; • &nbsp; Powered by Innovation</div>
+<h1><span class="tricolor">Bharat ka</span><br>AI Platform</h1>
+<h2>Soch Se Sach Tak</h2>
+<p>AI Fusion – भारत का अपना AI प्लेटफॉर्म, जहाँ आपकी कल्पनाएँ हकीकत बनती हैं।</p>
+<b>Fast　<span style="color:#ffb600">•</span>　Free　<span style="color:#00ff9d">•</span>　Made in India 🇮🇳　<span style="color:#ffb600">•</span>　Future Ready</b>
+<div class="actions"><a class="btn" href="#panels">🚀 Get Started →</a><a class="btn alt" href="#panels">▦ Explore Panels</a></div>
 </div>
-<div class="grid" id="grid"></div>
-<div class="empty" id="empty">No services found. Try another search.</div>
-</main>
-
-<section id="about" style="max-width:1120px;margin:auto;padding:0 22px 65px">
-<div style="border:1px solid var(--line);border-radius:20px;background:var(--panel);padding:27px">
-<div style="color:#a99aff;font-size:11px;letter-spacing:2px;margin-bottom:12px">ABOUT THE ECOSYSTEM</div>
-<h2 style="margin:0 0 10px;font-size:25px">Everything starts with VIRAT.</h2>
-<p style="color:var(--muted);font-size:13px;line-height:1.8;max-width:650px;margin:0">A growing collection of digital service concepts with a single, consistent experience. Service cards are currently a front-end demo; connected AI, payments, accounts and admin features require separate backend implementation.</p>
-</div>
+<div class="orbarea"><div class="chakra"></div><div class="orb"><span>V</span></div></div>
 </section>
-<footer><span><strong>VIRAT</strong> · DIGITAL ECOSYSTEM</span><span>One Platform. Endless Possibilities.</span><span>INSTANT PAY · Demo only</span></footer>
-
+<section class="stats">
+<div class="stat"><b>⚡ 50+</b><span>AI Tools</span></div><div class="stat"><b>👤 100K+</b><span>Happy Users</span></div><div class="stat"><b>🛡️ 99.9%</b><span>Uptime</span></div><div class="stat"><b>👑 Free & Premium</b><span>Both Available</span></div>
+</section>
+<h2 class="heading" id="panels">🇮🇳 Our Panels 🇮🇳</h2><p class="sub">Choose your panel and explore all services inside.</p>
+<main class="panels" id="panelGrid"></main>
+<section class="banner" id="about"><div><h3>🇮🇳 एक प्लेटफॉर्म, अनंत संभावनाएँ</h3><p>VIRAT DIGITAL ECOSYSTEM · One Platform. Endless Possibilities.</p></div><div class="checks"><span>Fast & Secure</span><span>No Login Required for demo</span><span>Made in India</span></div><a class="btn" href="#panels">Explore All Panels →</a></section>
+<footer id="footer"><a href="#" class="brand"><span class="flag">☸</span><span><strong>AI FUSION</strong><small>India's AI Powerhouse</small></span></a><nav><a href="#">Home</a><a href="#panels">Panels</a><a href="#panels">Services</a><a href="#about">About</a><a href="#footer">Contact</a></nav><div class="social">▶　➤　♥　●　Jai Hind 🇮🇳</div><div class="copyright">© 2026 AI FUSION. All rights reserved. · One Platform. Endless Possibilities.</div></footer>
 <script>
-const services=[
-["VIRAT AI","Your everyday AI assistant","✦","AI"],["VIRAT Search","Explore the web","⌕","AI"],["Code Studio","Write and organize code","⌘","Work"],["Image Creator","Create visual concepts","▧","Create"],["Video Studio","Video creation workspace","▷","Create"],["Voice Studio","Voice and audio tools","♫","Create"],["Writing Studio","Draft and polish text","✎","Create"],["Logo Maker","Explore brand ideas","◈","Create"],["Photo Editor","Edit image concepts","▧","Create"],["Music Studio","Music creation workspace","♫","Create"],["Document Hub","Organize your documents","▤","Work"],["PDF Tools","PDF utility workspace","▧","Utility"],["Notes","Keep your ideas together","✎","Work"],["Task Manager","Organize daily tasks","☑","Work"],["Calendar","Plan your schedule","▦","Work"],["Cloud Drive","Your file workspace","☁","Work"],["Translator","Language assistance","文","Learn"],["Study Assistant","Support your learning","▣","Learn"],["Math Solver","Explore math problems","∑","Learn"],["Quiz Maker","Build practice quizzes","?", "Learn"],["Resume Builder","Prepare a professional CV","▤","Work"],["Presentation Maker","Plan slide presentations","▥","Work"],["Spreadsheet Tools","Work with tables","▦","Work"],["Grammar Checker","Review written text","✓","Learn"],["Web Builder","Create website concepts","⌘","Work"],["App Studio","Plan app interfaces","▣","Work"],["Data Analyzer","Explore your data","⌁","Work"],["QR Generator","Create QR code concepts","▦","Utility"],["Password Tools","Security utility hub","♙","Utility"],["Unit Converter","Convert common units","⇄","Utility"],["Weather Hub","Weather information hub","☼","Utility"],["World Clock","Track time zones","◷","Utility"],["Calculator","Everyday calculations","＋","Utility"],["File Converter","File conversion workspace","⇄","Utility"],["Expense Tracker","Organize spending","₹","Finance"],["INSTANT PAY","Payment interface demo","₹","Finance"],["Invoice Maker","Prepare invoice documents","▤","Finance"],["VIRAT Account","Account interface concept","◉","Work"],["VIRAT Labs","Discover future ideas","✧","AI"]
+const panels=[
+{title:"AI Panel",desc:"Ultimate AI Tools for Everyone",icon:"✺",color:"#238cff",items:[["◉","ChatGPT"],["▧","Image Generator"],["⌘","Code Assistant"],["♩","Text to Speech"],["▶","Video Generator"],["✎","AI Writer"],["♫","Music Generator"],["◎","Voice Clone"]]},
+{title:"CSC Panel",desc:"Digital Services for Citizens",icon:"♙",color:"#00ffb2",items:[["▦","Aadhaar"],["▤","PAN Card"],["▣","DigiLocker"],["▧","eDistrict"],["▣","Passport"],["▤","Driving Licence"],["▦","Ration Card"],["✓","Certificates"]]},
+{title:"Social Media Panel",desc:"Grow Your Online Presence",icon:"◎",color:"#d32bff",items:[["◎","Instagram"],["▶","YouTube"],["f","Facebook"],["𝕏","X (Twitter)"],["➤","Telegram"],["in","LinkedIn"]]},
+{title:"Payment Panel",desc:"Fast, Secure, Reliable",icon:"₹",color:"#ffb800",items:[["↗","UPI"],["P","Paytm"],["पे","PhonePe"],["G","Google Pay"],["B","Bharat BillPay"],["▣","Wallet"]]},
+{title:"Service Panel",desc:"Utility & Business Services",icon:"⚙",color:"#ff2868",items:[["♧","Recharges"],["▤","Bill Payments"],["◉","DTH"],["♢","Insurance"],["✂","Tickets"],["♨","Food Delivery"],["▣","Shopping"],["✦","More Services"]]},
+{title:"Additional Panels",desc:"More Tools, More Possibilities",icon:"▦",color:"#00dfff",items:[["♧","Education"],["▶","Entertainment"],["♡","Health"],["♙","Jobs"],["✧","Gaming"],["✈","Travel"]]}
 ];
-const grid=document.getElementById("grid"),search=document.getElementById("search"),count=document.getElementById("count"),empty=document.getElementById("empty");
-let active="All";
-function render(){
-const q=search.value.trim().toLowerCase();
-const list=services.filter(s=>(active==="All"||s[3]===active)&&(s[0]+" "+s[1]+" "+s[3]).toLowerCase().includes(q));
-grid.innerHTML=list.map(s=>`<article class="card" tabindex="0" data-name="${s[0]}"><div class="card-top"><span class="card-icon">${s[2]}</span><span class="arrow">↗</span></div><h3>${s[0]}</h3><p>${s[1]}</p><span class="tag">${s[3]==="AI"?"SMART TOOLS":s[3].toUpperCase()}</span></article>`).join("");
-count.textContent=list.length+" SERVICES";
-empty.style.display=list.length?"none":"block";
-grid.querySelectorAll(".card").forEach(card=>{const go=()=>{const n=card.dataset.name;alert(n+" is currently a front-end demo. Its full functionality can be connected in a future update.")};card.addEventListener("click",go);card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}})});
+const logoMap={
+"ChatGPT":"https://cdn.simpleicons.org/openai/ffffff",
+"Image Generator":"https://cdn.simpleicons.org/openai/ffffff",
+"Code Assistant":"https://cdn.simpleicons.org/visualstudiocode/22aaff",
+"Text to Speech":"https://cdn.simpleicons.org/google/4285f4",
+"Video Generator":"https://cdn.simpleicons.org/youtube/ff0033",
+"AI Writer":"https://cdn.simpleicons.org/grammarly/15c39a",
+"Music Generator":"https://cdn.simpleicons.org/spotify/1ed760",
+"Instagram":"https://cdn.simpleicons.org/instagram/E4405F",
+"YouTube":"https://cdn.simpleicons.org/youtube/FF0033",
+"Facebook":"https://cdn.simpleicons.org/facebook/1877F2",
+"X (Twitter)":"https://cdn.simpleicons.org/x/ffffff",
+"Telegram":"https://cdn.simpleicons.org/telegram/26A5E4",
+"LinkedIn":"https://cdn.simpleicons.org/linkedin/0A66C2",
+"Paytm":"https://cdn.simpleicons.org/paytm/00BAF2",
+"PhonePe":"https://cdn.simpleicons.org/phonepe/5F259F",
+"Google Pay":"https://cdn.simpleicons.org/googlepay/4285F4",
+"Google Maps":"https://cdn.simpleicons.org/googlemaps/34A853",
+"Shopping":"https://cdn.simpleicons.org/shopify/95BF47",
+"Education":"https://cdn.simpleicons.org/googlescholar/4285F4"
+};
+function iconMarkup(item){
+ const url=logoMap[item[1]];
+ return url ? '<img loading="lazy" src="'+url+'" alt="'+item[1]+' logo" onerror="this.style.display=\'none\';this.parentElement.textContent=\'✦\'">' : item[0];
 }
-document.getElementById("filters").addEventListener("click",e=>{const b=e.target.closest("button[data-filter]");if(!b)return;active=b.dataset.filter;document.querySelectorAll("#filters button").forEach(x=>x.classList.toggle("active",x===b));render()});
-search.addEventListener("input",render);
-document.getElementById("clear").addEventListener("click",()=>{search.value="";active="All";document.querySelectorAll("#filters button").forEach(x=>x.classList.toggle("active",x.dataset.filter==="All"));render();search.focus()});
-document.getElementById("theme").addEventListener("click",()=>{const light=document.body.dataset.theme!=="light";document.body.dataset.theme=light?"light":"dark";if(light){document.documentElement.style.setProperty("--bg","#f5f6fb");document.documentElement.style.setProperty("--panel","#ffffff");document.documentElement.style.setProperty("--line","#e0e2ed");document.documentElement.style.setProperty("--text","#171827");document.documentElement.style.setProperty("--muted","#666b7d")}else{document.documentElement.style.setProperty("--bg","#08090d");document.documentElement.style.setProperty("--panel","#11131b");document.documentElement.style.setProperty("--line","#252836");document.documentElement.style.setProperty("--text","#f5f6ff");document.documentElement.style.setProperty("--muted","#969bad")}});
-render();
+const grid=document.getElementById("panelGrid");
+grid.innerHTML=panels.map((p,i)=>`<section class="panel" style="--c:${p.color}"><div class="panelhead"><div class="panelicon">${p.icon}</div><div class="paneltitle"><h3>${p.title}</h3><p>${p.desc}</p></div><span class="services-count">${p.items.length} Services</span></div><div class="servicegrid">${p.items.map(s=>`<button class="service" type="button" data-panel="${p.title}" data-service="${s[1]}"><span class="serviceicon">${iconMarkup(s)}</span><span>${s[1]}</span></button>`).join("")}</div></section>`).join("");
+grid.addEventListener("click",e=>{const b=e.target.closest("button[data-service]");if(!b)return;alert(b.dataset.service+"\\n"+b.dataset.panel+"\\n\\nThis is a front-end demo. The real service/API can be connected later.");});
 </script>
 </body>
 </html>
