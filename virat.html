@@ -112,6 +112,14 @@
 .virat-brand-icon{display:flex;align-items:center;justify-content:center;gap:10px}
 </style>
 
+
+<style id="virat-logo-style">
+.virat-real-logo{width:34px;height:34px;object-fit:contain;flex:0 0 34px}
+.virat-logo-slot{width:44px;height:44px;display:inline-flex;align-items:center;
+justify-content:center;border-radius:12px;background:rgba(127,127,127,.10);
+flex-shrink:0}
+</style>
+
 </head>
 <body class="relative min-h-screen flex flex-col antialiased selection:bg-saffron selection:text-black">
 
@@ -760,6 +768,22 @@ window.viratBrandLogo = function(name){
   return '<img class="virat-brand-logo" loading="lazy" alt="" src="https://www.google.com/s2/favicons?domain='
     + domain + '&sz=64">';
 };
+</script>
+
+
+<script id="virat-logo-helper">
+const VIRAT_LOGO_DOMAINS = {
+"Google":"google.com","YouTube":"youtube.com","WhatsApp":"whatsapp.com",
+"Instagram":"instagram.com","Facebook":"facebook.com","GitHub":"github.com",
+"Gmail":"mail.google.com","Drive":"drive.google.com","Maps":"maps.google.com",
+"LinkedIn":"linkedin.com","Telegram":"telegram.org","Canva":"canva.com",
+"ChatGPT":"chatgpt.com"
+};
+function viratLogoHTML(name){
+  const domain=VIRAT_LOGO_DOMAINS[name];
+  if(!domain)return "";
+  return '<span class="virat-logo-slot"><img class="virat-real-logo" loading="lazy" alt="'+name+' logo" src="https://www.google.com/s2/favicons?domain='+domain+'&sz=64"></span>';
+}
 </script>
 
 </body>
