@@ -30,6 +30,43 @@ h1, h2, h3, .logo, .brand, .panel-title, .section-title {
 }
 </style>
 
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style id="virat-cyber-theme">
+:root {
+  --bg:#080b18;
+  --panel:#11172b;
+  --accent:#a78bfa;
+  --cyan:#22d3ee;
+  --text:#edf2ff;
+  --muted:#9ba8c7;
+}
+html { background:var(--bg); }
+body {
+  background:radial-gradient(ellipse at top,#19244b 0%,#080b18 58%) !important;
+  color:var(--text) !important;
+  font-family:'Space Grotesk',sans-serif !important;
+}
+h1,h2,h3,h4,.logo,.brand,.panel-title,.section-title {
+  font-family:'Rajdhani',sans-serif !important;
+  font-weight:700 !important;
+  letter-spacing:.5px;
+}
+button,input,select,textarea { font-family:'Space Grotesk',sans-serif !important; }
+.service-card,.app-card,.panel,.card,
+[class*="service-card"],[class*="panel"] {
+  border-color:rgba(167,139,250,.25) !important;
+}
+.service-card:hover,.app-card:hover,.card:hover {
+  border-color:var(--cyan) !important;
+  box-shadow:0 0 22px rgba(34,211,238,.15) !important;
+}
+a { color:var(--cyan); }
+::selection { background:var(--accent);color:#080b18; }
+</style>
+
 </head>
 <body>
 <header class="top">
