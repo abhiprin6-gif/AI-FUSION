@@ -1,0 +1,14 @@
+/* VIRAT / AI FUSION brand logo support */
+.brand-logo {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  flex: 0 0 38px;
+  border-radius: 10px;
+  background: #fff;
+  padding: 4px;
+}
+.service-card .brand-logo,
+.app-card .brand-logo {
+  display: block;
+}
