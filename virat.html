@@ -105,6 +105,13 @@
         @media(max-width:480px){ .upgrade-panel { padding:.8rem; } #accountActions { width:100%; } #accountActions button { flex:1; } }
         @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
     </style>
+
+<style>
+/* VIRAT_REAL_BRAND_LOGOS */
+.virat-brand-logo{width:34px;height:34px;object-fit:contain;flex-shrink:0}
+.virat-brand-icon{display:flex;align-items:center;justify-content:center;gap:10px}
+</style>
+
 </head>
 <body class="relative min-h-screen flex flex-col antialiased selection:bg-saffron selection:text-black">
 
@@ -735,5 +742,25 @@
 
         renderTools();
     </script>
+
+<script>
+/* VIRAT_REAL_BRAND_LOGOS */
+window.VIRAT_BRAND_DOMAINS = {
+  "Google":"google.com","YouTube":"youtube.com",
+  "WhatsApp":"whatsapp.com","Instagram":"instagram.com",
+  "Facebook":"facebook.com","GitHub":"github.com",
+  "Gmail":"mail.google.com","Google Drive":"drive.google.com",
+  "Google Maps":"maps.google.com","LinkedIn":"linkedin.com",
+  "X":"x.com","Telegram":"telegram.org",
+  "Canva":"canva.com","ChatGPT":"chatgpt.com"
+};
+window.viratBrandLogo = function(name){
+  const domain = window.VIRAT_BRAND_DOMAINS[name];
+  if(!domain) return "";
+  return '<img class="virat-brand-logo" loading="lazy" alt="" src="https://www.google.com/s2/favicons?domain='
+    + domain + '&sz=64">';
+};
+</script>
+
 </body>
 </html>
