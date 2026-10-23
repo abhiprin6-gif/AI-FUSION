@@ -1,42 +1,733 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en-IN" class="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#070b18">
-<title>VIRAT | Digital Ecosystem</title>
-<link rel="stylesheet" href="virat.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="VIRAT Digital Ecosystem: 39 digital service modules, V-Suite, civic resources and INSTANT PAY demo.">
+    <title>VIRAT DIGITAL ECOSYSTEM | Bharat Ka Platform Engine</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Fonts: Space Grotesk & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        saffron: '#FF9933',
+                        indiaGreen: '#138808',
+                        navyBlue: '#000080',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+            color: #f8fafc;
+            overflow-x: hidden;
+            letter-spacing: -0.01em;
+        }
+
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        .text-glow-saffron {
+            text-shadow: 0 0 20px rgba(255, 153, 51, 0.5), 0 0 40px rgba(255, 153, 51, 0.2);
+        }
+
+        .text-glow-white {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+        }
+
+        .glass-panel {
+            background: rgba(10, 15, 30, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-4px);
+            background: rgba(15, 23, 42, 0.65);
+            border-color: rgba(255, 153, 51, 0.5);
+            box-shadow: 0 0 25px rgba(255, 153, 51, 0.3), 0 15px 35px -5px rgba(0, 0, 0, 0.6);
+        }
+
+        .glow-saffron {
+            box-shadow: 0 0 35px rgba(255, 153, 51, 0.35);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(3, 7, 18, 0.8);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 153, 51, 0.4);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 153, 51, 0.8);
+        }
+    
+        /* VIRAT upgrade layer */
+        html { scroll-behavior:smooth; }
+        :focus-visible { outline:2px solid #FF9933; outline-offset:3px; }
+        .upgrade-panel { background:rgba(8,15,31,.78); border:1px solid rgba(255,255,255,.14); border-radius:1.25rem; padding:1rem; }
+        .upgrade-btn { border:1px solid rgba(255,255,255,.18); border-radius:.8rem; padding:.65rem .9rem; font-size:.78rem; font-weight:800; transition:.2s; }
+        .upgrade-btn:hover { border-color:#FF9933; background:rgba(255,153,51,.12); }
+        .service-card { min-height:118px; }
+        #accountNotice { display:none; }
+        @media(max-width:480px){ .upgrade-panel { padding:.8rem; } #accountActions { width:100%; } #accountActions button { flex:1; } }
+        @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    </style>
 </head>
-<body>
-<header class="top">
-  <a class="brand" href="virat.html"><span class="logo">V</span><span>VIRAT<small>DIGITAL ECOSYSTEM</small></span></a>
-  <button id="theme" class="theme" aria-label="Theme बदलें">☀️</button>
-</header>
+<body class="relative min-h-screen flex flex-col antialiased selection:bg-saffron selection:text-black">
 
-<main>
-<section class="hero">
-  <div class="eyebrow">✦ ONE PLATFORM · MANY POSSIBILITIES</div>
-  <h1>Your Digital World,<br><span>One VIRAT Platform.</span></h1>
-  <p>काम, क्रिएटिविटी, टेक्नोलॉजी और डिजिटल सेवाएँ — सब एक जगह।</p>
-  <div class="hero-actions">
-    <a href="#services" class="primary">Explore Services ↗</a>
-    <a href="#about" class="secondary">हमारे बारे में</a>
-  </div>
-  <div class="orbit"><div class="orbit-core">V</div><i>✦</i><b>✧</b><em>+</em></div>
-  <div class="stats"><div><strong>39+</strong><span>Service Ideas</span></div><div><strong>01</strong><span>Unified Platform</span></div><div><strong>24/7</strong><span>Digital Access</span></div></div>
-</section>
+    <!-- Canvas: Real-time Animated Waving Indian Tiranga Wallpaper -->
+    <canvas id="tirangaCanvas" class="fixed inset-0 w-full h-full z-0 pointer-events-none opacity-95"></canvas>
 
-<section id="services" class="services">
-  <div class="section-head"><div><span class="eyebrow">THE ECOSYSTEM</span><h2>Explore <span>Services</span></h2></div><span id="count" class="count">39 SERVICES</span></div>
-  <div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search services..." autocomplete="off"><button id="clear">✕</button></div>
-  <div id="filters" class="filters"></div>
-  <div id="grid" class="grid"></div>
-  <p id="empty" hidden>कोई service नहीं मिली। दूसरा नाम खोजें।</p>
-</section>
+    <!-- Dark Overlay to ensure legibility -->
+    <div class="fixed inset-0 bg-gradient-to-b from-slate-950/50 via-slate-950/40 to-slate-950/70 z-0 pointer-events-none"></div>
 
-<section id="about" class="about"><span class="eyebrow">BUILT FOR YOUR NEXT STEP</span><h2>बड़े सपने। <span>एक डिजिटल शुरुआत।</span></h2><p>VIRAT एक ऐसा डिजिटल इकोसिस्टम है जहाँ उपयोगी टूल्स और ऑनलाइन सेवाओं को एक आसान अनुभव में लाने का लक्ष्य है।</p><a class="primary" href="#services">Services देखें ↗</a></section>
-</main>
-<footer><a class="brand" href="virat.html"><span class="logo">V</span><span>VIRAT<small>DIGITAL ECOSYSTEM</small></span></a><span>Designed for the digital future ✦</span><a href="index.html">← AI Fusion</a></footer>
-<script src="virat.js"></script>
+    <!-- Main Container -->
+    <div class="relative z-10 flex flex-col min-h-screen">
+
+        <!-- Header -->
+        <header class="sticky top-0 z-40 glass-panel border-b border-white/20 px-3 sm:px-6 py-2.5 transition-all duration-300">
+            <div class="absolute top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-saffron via-white to-emerald-500 shadow-sm"></div>
+
+            <div class="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
+                
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 shrink-0">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-saffron via-amber-400 to-emerald-500 p-0.5 flex items-center justify-center shadow-lg shadow-saffron/20">
+                        <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+                            <span class="font-display font-black text-saffron text-lg">V</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="font-display font-bold text-sm sm:text-base text-white tracking-wide leading-none flex items-center gap-1.5">
+                            <span>VIRAT</span>
+                            <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-saffron/20 text-saffron border border-saffron/30">v3.9</span>
+                        </h1>
+                        <p class="text-[10px] text-slate-300 font-medium">Digital Ecosystem Engine</p>
+                    </div>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="flex items-center space-x-3" id="accountActions">
+                    <button onclick="openAccountPanel('user')" class="upgrade-btn text-white">User Panel</button>
+                    <button onclick="openAccountPanel('admin')" class="upgrade-btn text-saffron">Admin</button>
+                    <div class="hidden sm:flex items-center space-x-2 text-xs text-slate-300">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span class="font-semibold text-emerald-400">Interface Ready</span>
+                    </div>
+                    <button onclick="scrollToTools()" class="font-display px-4 py-1.5 rounded-xl bg-saffron/20 hover:bg-saffron/30 text-saffron border border-saffron/40 font-bold text-xs transition flex items-center space-x-1">
+                        <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+                        <span>39 Modules</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-10">
+
+            <!-- Hero Section -->
+            <section id="hero" class="relative rounded-3xl glass-panel p-6 sm:p-10 overflow-hidden border border-saffron/20 glow-saffron">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                    
+                    <div class="lg:col-span-12 space-y-6 text-center">
+                        <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-wider text-slate-200 uppercase">
+                            <span class="text-saffron">🇮🇳 VIRAT DIGITAL ECOSYSTEM</span>
+                            <span class="text-slate-400">•</span>
+                            <span class="text-emerald-400">One Platform. Endless Possibilities.</span>
+                        </div>
+
+                        <h1 class="font-display text-4xl sm:text-6xl font-black text-white tracking-tight leading-none">
+                            Bharat Ka <span class="bg-clip-text text-transparent bg-gradient-to-r from-saffron via-white to-emerald-400 text-glow-saffron">AI Platform Engine</span><br/>
+                            <span class="text-3xl sm:text-5xl text-slate-100 font-black tracking-tight text-glow-white">Soch Se Sach Tak</span>
+                        </h1>
+
+                        <p class="text-slate-200 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-medium">
+                            VIRAT – 39+ Integrated Digital & Government Services. Powering Search, AI Studio, V Maps, Citizen Grievances, CSC, Career Engine & INSTANT PAY.
+                        </p>
+
+                        <!-- Central Search Bar -->
+                        <div class="relative max-w-2xl mx-auto space-y-3">
+                            <div class="relative flex items-center bg-slate-950/80 backdrop-blur-xl border-2 border-white/25 rounded-full p-2 shadow-2xl focus-within:border-saffron focus-within:ring-2 focus-within:ring-saffron/40 transition-all duration-300">
+                                
+                                <div class="pl-3.5 pr-2 flex items-center space-x-1 shrink-0">
+                                    <span class="text-lg font-black text-saffron">V</span>
+                                    <span class="text-lg font-black text-white">S</span>
+                                    <span class="text-lg font-black text-emerald-400">earch</span>
+                                </div>
+
+                                <div class="h-5 w-[1px] bg-white/20 my-auto mx-1"></div>
+
+                                <input type="text" id="googleSearchInput" onkeyup="if(event.key === 'Enter') executeGoogleSearch(); filterTools();" placeholder="Search V-Services, Govt Schemes, V Maps or Web..." 
+                                       class="w-full bg-transparent border-none py-2 px-3 text-xs sm:text-sm text-white font-medium placeholder-slate-400 focus:outline-none">
+
+                                <div class="flex items-center space-x-1.5 pr-1">
+                                    <button onclick="startVoiceSearch()" title="Voice Search" class="p-2 rounded-full hover:bg-white/10 text-slate-300 hover:text-saffron transition">
+                                        <i data-lucide="mic" class="w-4 h-4"></i>
+                                    </button>
+                                    <button onclick="executeGoogleSearch()" class="font-display px-5 py-2.5 rounded-full bg-gradient-to-r from-saffron via-amber-500 to-saffron hover:brightness-110 text-slate-950 font-black text-xs tracking-wider shadow-lg shadow-saffron/20 transition-all transform active:scale-95 flex items-center space-x-1.5">
+                                        <i data-lucide="search" class="w-3.5 h-3.5 fill-slate-950"></i>
+                                        <span class="hidden xs:inline uppercase">Search Web</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap items-center justify-center gap-2 text-[11px] font-bold text-slate-200">
+                                <span class="text-slate-400">Hot Modules:</span>
+                                <button onclick="setSearchQuery('V Maps')" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-saffron/30 hover:text-saffron border border-white/15 transition">📍 V Maps</button>
+                                <button onclick="setSearchQuery('Citizen Problem Hub')" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-saffron/30 hover:text-saffron border border-white/15 transition">🚨 Grievance Hub</button>
+                                <button onclick="setSearchQuery('V Career')" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-saffron/30 hover:text-saffron border border-white/15 transition">💼 V Career Jobs</button>
+                                <button onclick="setSearchQuery('INSTANT PAY')" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-saffron/30 hover:text-saffron border border-white/15 transition">⚡ INSTANT PAY</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Account panels: frontend demo only; production authentication requires a server -->
+            <section id="accountPanel" class="glass-panel rounded-3xl p-5 sm:p-7 space-y-4" hidden>
+                <div class="flex items-center justify-between gap-3">
+                    <div><p class="text-saffron text-xs font-black uppercase tracking-widest">VIRAT ACCOUNT</p><h2 id="accountPanelTitle" class="font-display text-2xl font-black">User Panel</h2></div>
+                    <button onclick="closeAccountPanel()" class="upgrade-btn text-white">Close ✕</button>
+                </div>
+                <p id="accountNotice" class="text-xs text-amber-200 bg-amber-500/10 border border-amber-400/20 rounded-xl p-3"></p>
+                <div id="accountPanelBody" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+            </section>
+
+            <!-- Global Tech Stack Logos Banner -->
+            <div class="glass-panel rounded-2xl p-6 border border-white/10">
+                <h3 class="text-center font-display text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Supported Technical Architecture Stack</h3>
+                <div class="flex flex-wrap justify-around items-center gap-6 opacity-85 hover:opacity-100 transition-all duration-300">
+                    <div class="flex items-center gap-2 text-white font-semibold text-xs sm:text-sm">
+                        <i data-lucide="cloud" class="w-5 h-5 text-amber-400"></i>
+                        <span>AWS Cloud</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white font-semibold text-xs sm:text-sm">
+                        <i data-lucide="globe" class="w-5 h-5 text-blue-400"></i>
+                        <span>Google Cloud</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white font-semibold text-xs sm:text-sm">
+                        <i data-lucide="cpu" class="w-5 h-5 text-cyan-400"></i>
+                        <span>Microsoft Azure</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white font-semibold text-xs sm:text-sm">
+                        <i data-lucide="box" class="w-5 h-5 text-sky-400"></i>
+                        <span>Docker Container</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white font-semibold text-xs sm:text-sm">
+                        <i data-lucide="layers" class="w-5 h-5 text-indigo-400"></i>
+                        <span>Kubernetes</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- V-Suite Productivity Services -->
+            <section id="google-services" class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="font-display text-2xl sm:text-3xl font-black text-white flex items-center space-x-2 tracking-tight">
+                            <span>VIRAT V-Suite Services</span>
+                            <span class="text-blue-400">🚀</span>
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-300 font-medium">Independent, privacy-first alternative applications (Modules 25-39)</p>
+                    </div>
+                    <span class="hidden sm:inline text-xs font-bold px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30">15 Alternatives</span>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-3">
+                    <button onclick="openModal('V Maps', 'Offline/Online OpenStreetMap GPS & Transit Planning')" class="glass-panel p-3.5 rounded-2xl glass-card-hover text-center space-y-1.5">
+                        <i data-lucide="map-pin" class="w-6 h-6 mx-auto text-red-400"></i>
+                        <div class="font-bold text-xs text-white">V Maps</div>
+                        <div class="text-[9px] text-slate-300">GPS & Transit</div>
+                    </button>
+
+                    <button onclick="openModal('V Mail', 'Secure Encrypted Sovereign Email Platform')" class="glass-panel p-3.5 rounded-2xl glass-card-hover text-center space-y-1.5">
+                        <i data-lucide="mail" class="w-6 h-6 mx-auto text-blue-400"></i>
+                        <div class="font-bold text-xs text-white">V Mail</div>
+                        <div class="text-[9px] text-slate-300">Encrypted Mail</div>
+                    </button>
+
+                    <button onclick="openModal('V Docs', 'Collaborative Cloud Document Editor')" class="glass-panel p-3.5 rounded-2xl glass-card-hover text-center space-y-1.5">
+                        <i data-lucide="file-text" class="w-6 h-6 mx-auto text-sky-400"></i>
+                        <div class="font-bold text-xs text-white">V Docs</div>
+                        <div class="text-[9px] text-slate-300">Docs Editor</div>
+                    </button>
+
+                    <button onclick="openModal('V Sheets', 'Data Analytics Spreadsheet Suite')" class="glass-panel p-3.5 rounded-2xl glass-card-hover text-center space-y-1.5">
+                        <i data-lucide="sheet" class="w-6 h-6 mx-auto text-emerald-400"></i>
+                        <div class="font-bold text-xs text-white">V Sheets</div>
+                        <div class="text-[9px] text-slate-300">Spreadsheets</div>
+                    </button>
+
+                    <button onclick="openModal('V Slides', 'AI Powered Presentation Creator')" class="glass-panel p-3.5 rounded-2xl glass-card-hover text-center space-y-1.5">
+                        <i data-lucide="presentation" class="w-6 h-6 mx-auto text-amber-400"></i>
+                        <div class="font-bold text-xs text-white">V Slides</div>
+                        <div class="text-[9px] text-slate-300">Presentations</div>
+                    </button>
+
+                    <button onclick="openModal('V Calendar', 'Schedule & Reminders Manager')" class="glass-panel p-3.5 rounded-2xl glass-card-hover text-center space-y-1.5">
+                        <i data-lucide="calendar" class="w-6 h-6 mx-auto text-indigo-400"></i>
+                        <div class="font-bold text-xs text-white">V Calendar</div>
+                        <div class="text-[9px] text-slate-300">Schedules</div>
+                    </button>
+
+                    <button onclick="openModal('V Meet', 'Encrypted Video Conferencing Portal')" class="glass-panel p-3.5 rounded-2xl glass-card-hover text-center space-y-1.5">
+                        <i data-lucide="video" class="w-6 h-6 mx-auto text-pink-400"></i>
+                        <div class="font-bold text-xs text-white">V Meet</div>
+                        <div class="text-[9px] text-slate-300">Video Calls</div>
+                    </button>
+
+                    <button onclick="openModal('V Browser', 'Privacy First Lightning Web Browser')" class="glass-panel p-3.5 rounded-2xl glass-card-hover text-center space-y-1.5">
+                        <i data-lucide="globe" class="w-6 h-6 mx-auto text-cyan-400"></i>
+                        <div class="font-bold text-xs text-white">V Browser</div>
+                        <div class="text-[9px] text-slate-300">Fast Browsing</div>
+                    </button>
+
+                    <button onclick="openModal('V Account', 'Unified Sovereign Single-Sign-On')" class="glass-panel p-3.5 rounded-2xl glass-card-hover text-center space-y-1.5">
+                        <i data-lucide="shield-check" class="w-6 h-6 mx-auto text-saffron"></i>
+                        <div class="font-bold text-xs text-white">V Account</div>
+                        <div class="text-[9px] text-slate-300">Identity SSO</div>
+                    </button>
+
+                    <button onclick="openModal('V AI Studio', 'Developer Fine-Tuning & Model Workspace')" class="glass-panel p-3.5 rounded-2xl glass-card-hover text-center space-y-1.5">
+                        <i data-lucide="sparkles" class="w-6 h-6 mx-auto text-violet-400"></i>
+                        <div class="font-bold text-xs text-white">V AI Studio</div>
+                        <div class="text-[9px] text-slate-300">AI Workbench</div>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Citizen Problem Hub Interactive Card -->
+            <section id="citizen-hub" class="glass-panel rounded-3xl p-6 sm:p-8 border border-red-500/30 space-y-6">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-white/10 pb-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-3 rounded-2xl bg-red-500/20 text-red-400">
+                            <i data-lucide="shield-alert" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h2 class="font-display text-xl sm:text-2xl font-black text-white">VIRAT Citizen Problem Hub (Module 24)</h2>
+                            <p class="text-xs text-slate-300">File civic grievances, track official department links, auto-generate complaint drafts.</p>
+                        </div>
+                    </div>
+                    <button onclick="openModal('Grievance Draft Engine', 'Auto-Format Grievance Drafts for CPGRAMS')" class="px-4 py-2 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/40 font-bold text-xs transition">
+                        Draft Grievance Complaint
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+                    <div class="p-4 rounded-2xl bg-slate-950/40 border border-white/10 space-y-2">
+                        <div class="font-bold text-saffron flex items-center space-x-1.5">
+                            <i data-lucide="file-plus" class="w-4 h-4"></i>
+                            <span>1. File Grievance</span>
+                        </div>
+                        <p class="text-slate-300 text-[11px]">Attach photo, location, select civic category (Roads, Water, Electricity, Municipal).</p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-slate-950/40 border border-white/10 space-y-2">
+                        <div class="font-bold text-cyan-400 flex items-center space-x-1.5">
+                            <i data-lucide="cpu" class="w-4 h-4"></i>
+                            <span>2. Smart AI Routing</span>
+                        </div>
+                        <p class="text-slate-300 text-[11px]">System auto-detects concerned ministry/department & provides direct CPGRAMS link.</p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-slate-950/40 border border-white/10 space-y-2">
+                        <div class="font-bold text-emerald-400 flex items-center space-x-1.5">
+                            <i data-lucide="bell-ring" class="w-4 h-4"></i>
+                            <span>3. Tracking & Reminders</span>
+                        </div>
+                        <p class="text-slate-300 text-[11px]">Store grievance reference numbers and set follow-up escalation reminders.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Master Tools Directory Section -->
+            <section id="all-tools" class="space-y-6">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-4">
+                    <div>
+                        <h2 class="font-display text-2xl sm:text-3xl font-black text-white flex items-center space-x-2 tracking-tight">
+                            <span>Master 39-Module Engine Directory</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-saffron/20 text-saffron border border-saffron/30 font-bold uppercase tracking-wider">39 Modules</span>
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-300 font-medium">Click any card to launch module or inspect architecture</p>
+                    </div>
+
+                    <!-- Category Filter Pills -->
+                    <div class="flex items-center space-x-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
+                        <button onclick="setFilter('all', event)" class="filter-btn font-display uppercase tracking-wider px-3.5 py-1.5 rounded-xl text-xs font-bold bg-saffron text-slate-950 shadow">All</button>
+                        <button onclick="setFilter('core', event)" class="filter-btn font-display uppercase tracking-wider px-3.5 py-1.5 rounded-xl text-xs font-bold glass-panel text-slate-300 hover:text-white">Core Modules</button>
+                        <button onclick="setFilter('vsuite', event)" class="filter-btn font-display uppercase tracking-wider px-3.5 py-1.5 rounded-xl text-xs font-bold glass-panel text-slate-300 hover:text-white">V-Suite</button>
+                        <button onclick="setFilter('govt', event)" class="filter-btn font-display uppercase tracking-wider px-3.5 py-1.5 rounded-xl text-xs font-bold glass-panel text-slate-300 hover:text-white">Govt & Civic</button>
+                        <button onclick="setFilter('fin', event)" class="filter-btn font-display uppercase tracking-wider px-3.5 py-1.5 rounded-xl text-xs font-bold glass-panel text-slate-300 hover:text-white">Finance</button>
+                    </div>
+                </div>
+
+                <!-- Master Dynamic Tools Grid -->
+                <div id="toolsGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
+                    <!-- Dynamic Tool Cards -->
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="glass-panel border-t border-white/10 mt-16 py-8 px-4 sm:px-8">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-saffron flex items-center justify-center font-black text-slate-950">V</div>
+                    <div>
+                        <p class="text-xs font-bold text-white">VIRAT DIGITAL ECOSYSTEM</p>
+                        <p class="text-[10px] text-slate-400">© 2026 VIRAT DIGITAL ECOSYSTEM • Interface Demo • Made with ❤️ in India 🇮🇳</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-6 text-xs text-slate-400 font-medium">
+                    <a href="#" class="hover:text-saffron">Privacy Dashboard</a>
+                    <a href="#" class="hover:text-saffron">Open Data</a>
+                    <a href="#" class="hover:text-saffron">CSC Verification</a>
+                    <a href="#" class="hover:text-saffron">Grievance Portal</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Modal Popup -->
+    <div id="toolModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 p-4">
+        <div class="glass-panel border border-saffron/30 rounded-3xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl space-y-5 text-center transform scale-95 transition-transform duration-300" id="modalContent">
+            <button onclick="closeModal()" class="absolute top-4 right-4 p-2 rounded-full bg-white/10 text-slate-400 hover:text-white">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+            <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-tr from-saffron to-amber-500 p-0.5 flex items-center justify-center">
+                <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center text-saffron" id="modalIcon">
+                    <i data-lucide="sparkles" class="w-8 h-8"></i>
+                </div>
+            </div>
+            <div>
+                <h3 id="modalTitle" class="text-xl font-bold text-white">Tool Name</h3>
+                <p id="modalDesc" class="text-xs text-slate-300 mt-1">Tool Description Here</p>
+            </div>
+            <div class="p-3 rounded-2xl bg-white/5 border border-white/10 text-xs text-emerald-400 font-medium flex items-center justify-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>Active Engine Node Service</span>
+            </div>
+            <div class="flex space-x-3 pt-2">
+                <button onclick="closeModal()" class="flex-1 py-2.5 rounded-xl glass-panel text-xs font-semibold text-slate-300 hover:bg-white/10">Close</button>
+                <button onclick="launchModule()" class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-saffron to-amber-500 text-slate-950 font-bold text-xs shadow-lg shadow-saffron/20">Launch Module 🚀</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        lucide.createIcons();
+
+        function executeGoogleSearch() {
+            const query = document.getElementById('googleSearchInput').value.trim();
+            if (query) {
+                window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+            }
+        }
+
+        function setSearchQuery(text) {
+            document.getElementById('googleSearchInput').value = text;
+            filterTools();
+        }
+
+        function startVoiceSearch() {
+            if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                const recognition = new SpeechRecognition();
+                recognition.lang = 'hi-IN';
+                recognition.start();
+                
+                const searchInput = document.getElementById('googleSearchInput');
+                searchInput.placeholder = "Listening...";
+                
+                recognition.onresult = function(event) {
+                    const transcript = event.results[0][0].transcript;
+                    searchInput.value = transcript;
+                    searchInput.placeholder = "Search V-Services, Govt Schemes, V Maps or Web...";
+                    filterTools();
+                    executeGoogleSearch();
+                };
+
+                recognition.onerror = function() {
+                    searchInput.placeholder = "Search V-Services, Govt Schemes, V Maps or Web...";
+                };
+            }
+        }
+
+        // Animated Waving Indian Tiranga Wallpaper Engine
+        const canvas = document.getElementById('tirangaCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        let waveOffset = 0;
+
+        function drawTirangaFlag() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            waveOffset += 0.025;
+
+            const width = canvas.width;
+            const height = canvas.height;
+            const stripeHeight = height / 3;
+
+            const colors = [
+                { r: 255, g: 153, b: 51 },   // Saffron
+                { r: 255, g: 255, b: 255 },  // White
+                { r: 19, g: 136, b: 8 }      // India Green
+            ];
+
+            for (let stripeIndex = 0; stripeIndex < 3; stripeIndex++) {
+                const color = colors[stripeIndex];
+                ctx.beginPath();
+                
+                const startY = stripeIndex * stripeHeight;
+
+                for (let x = 0; x <= width; x += 10) {
+                    const wave1 = Math.sin(x * 0.003 + waveOffset) * 22;
+                    const wave2 = Math.cos(x * 0.006 - waveOffset * 0.8) * 12;
+                    const y = startY + wave1 + wave2;
+
+                    if (x === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                }
+
+                ctx.lineTo(width, (stripeIndex + 1) * stripeHeight + 30);
+                ctx.lineTo(0, (stripeIndex + 1) * stripeHeight + 30);
+                ctx.closePath();
+
+                const grad = ctx.createLinearGradient(0, startY, width, startY + stripeHeight);
+                grad.addColorStop(0, `rgba(${color.r}, ${color.g}, ${color.b}, 0.72)`);
+                grad.addColorStop(0.5, `rgba(${color.r}, ${color.g}, ${color.b}, 0.88)`);
+                grad.addColorStop(1, `rgba(${color.r}, ${color.g}, ${color.b}, 0.72)`);
+
+                ctx.fillStyle = grad;
+                ctx.fill();
+            }
+
+            // Draw Central Ashoka Chakra
+            const chakraX = width * 0.8;
+            const chakraY = stripeHeight * 1.5 + Math.sin(chakraX * 0.003 + waveOffset) * 20;
+            const radius = Math.min(width, height) * 0.12;
+
+            ctx.save();
+            ctx.translate(chakraX, chakraY);
+            ctx.rotate(waveOffset * 0.2);
+
+            ctx.strokeStyle = 'rgba(0, 0, 128, 0.45)';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.arc(0, 0, radius, 0, Math.PI * 2);
+            ctx.stroke();
+
+            for (let i = 0; i < 24; i++) {
+                const angle = (i * Math.PI) / 12;
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.lineTo(Math.cos(angle) * radius, Math.sin(angle) * radius);
+                ctx.stroke();
+            }
+            ctx.restore();
+
+            requestAnimationFrame(drawTirangaFlag);
+        }
+
+        window.onload = function() {
+            drawTirangaFlag();
+        };
+
+        // 39 Comprehensive Modules Mapping
+        const masterToolsData = [
+            { id: 1, name: 'V Search', desc: 'Sovereign Search Engine', category: 'core', icon: 'search' },
+            { id: 2, name: 'VIRAT AI', desc: 'Conversational Intelligence', category: 'core', icon: 'bot' },
+            { id: 3, name: 'Government', desc: 'Central & State Scheme Directory', category: 'govt', icon: 'landmark' },
+            { id: 4, name: 'V Career', desc: 'Sarkari Result & Job Portal', category: 'core', icon: 'briefcase' },
+            { id: 5, name: 'Education', desc: 'Competitions & ITI Resources', category: 'core', icon: 'graduation-cap' },
+            { id: 6, name: 'Drive', desc: 'Encrypted Cloud Storage', category: 'vsuite', icon: 'hard-drive' },
+            { id: 7, name: 'Videos', desc: 'Streaming Video Hub', category: 'vsuite', icon: 'youtube' },
+            { id: 8, name: 'INSTANT PAY', desc: 'Sandbox Unified Payments Gateway', category: 'fin', icon: 'zap' },
+            { id: 9, name: 'VIRAT CSC', desc: 'Citizen Service Center Locator', category: 'govt', icon: 'building-2' },
+            { id: 10, name: 'Business', desc: 'MSME Local Business Directory', category: 'core', icon: 'store' },
+            { id: 11, name: 'Innovation', desc: 'Incubation & Startup Hub', category: 'core', icon: 'lightbulb' },
+            { id: 12, name: 'Research', desc: 'Open Science Research Portal', category: 'core', icon: 'microscope' },
+            { id: 13, name: 'Technology', desc: 'Developer API Cloud Workbench', category: 'tech', icon: 'cpu' },
+            { id: 14, name: 'Agriculture', desc: 'Mandi Prices & Soil Insights', category: 'govt', icon: 'sprout' },
+            { id: 15, name: 'Health', desc: 'Hospital Locator & Telehealth', category: 'govt', icon: 'activity' },
+            { id: 16, name: 'Local', desc: 'Hyperlocal Business Discovery', category: 'core', icon: 'map' },
+            { id: 17, name: 'Connect', desc: 'Community Chat & Networking', category: 'core', icon: 'users' },
+            { id: 18, name: 'Trust', desc: 'Scam & Fake Job Verification Engine', category: 'core', icon: 'shield-check' },
+            { id: 19, name: 'Memory', desc: 'Personal Notes & Vault', category: 'vsuite', icon: 'bookmark' },
+            { id: 20, name: 'Notifications', desc: 'Real-time Push Alerts', category: 'core', icon: 'bell' },
+            { id: 21, name: 'Admin', desc: 'Platform Management Console', category: 'core', icon: 'settings' },
+            { id: 22, name: 'Developer Cloud', desc: 'API & No-Code App Engine', category: 'tech', icon: 'code-2' },
+            { id: 23, name: 'Opportunity Engine', desc: 'Scholarships & Grants Matcher', category: 'core', icon: 'award' },
+            { id: 24, name: 'Citizen Problem Hub', desc: 'Grievance Filing & CPGRAMS Link', category: 'govt', icon: 'shield-alert' },
+            { id: 25, name: 'V Maps', desc: 'OpenStreetMap GPS Navigation', category: 'vsuite', icon: 'map-pin' },
+            { id: 26, name: 'V Mail', desc: 'Encrypted Sovereign Mail', category: 'vsuite', icon: 'mail' },
+            { id: 27, name: 'V Docs', desc: 'Cloud Document Editor', category: 'vsuite', icon: 'file-text' },
+            { id: 28, name: 'V Sheets', desc: 'Analytics Spreadsheet Suite', category: 'vsuite', icon: 'sheet' },
+            { id: 29, name: 'Slides', desc: 'AI Presentation Builder', category: 'vsuite', icon: 'presentation' },
+            { id: 30, name: 'Calendar', desc: 'Schedule & Event Sync', category: 'vsuite', icon: 'calendar' },
+            { id: 31, name: 'V Meet', desc: 'Encrypted Video Conferences', category: 'vsuite', icon: 'video' },
+            { id: 32, name: 'Browser', desc: 'Privacy-focused Web Browser', category: 'vsuite', icon: 'globe' },
+            { id: 33, name: 'Account', desc: 'Unified Identity SSO', category: 'vsuite', icon: 'user-check' },
+            { id: 34, name: 'Photos', desc: 'AI Cloud Photo Storage', category: 'vsuite', icon: 'image' },
+            { id: 35, name: 'V Translate', desc: 'Multilingual Indian Language Translator', category: 'vsuite', icon: 'languages' },
+            { id: 36, name: 'Voice', desc: 'AI Voice Command Center', category: 'vsuite', icon: 'mic' },
+            { id: 37, name: 'V AI Studio', desc: 'Developer Model Workspace', category: 'vsuite', icon: 'sparkles' },
+            { id: 38, name: 'News', desc: 'Aggregated Sovereign News Feed', category: 'vsuite', icon: 'newspaper' },
+            { id: 39, name: 'Books & Research', desc: 'Digital Public Library Engine', category: 'vsuite', icon: 'book-open' }
+        ];
+
+        let currentFilter = 'all';
+        const FAVORITES_KEY = 'virat_favorites_v1';
+        function getFavorites(){ try { return JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]'); } catch { return []; } }
+        function isFavorite(id){ return getFavorites().includes(id); }
+        function toggleFavorite(id){ const list=getFavorites(); const next=list.includes(id)?list.filter(x=>x!==id):[...list,id]; localStorage.setItem(FAVORITES_KEY,JSON.stringify(next)); renderTools(); }
+
+        function openAccountPanel(type){
+            const panel=document.getElementById('accountPanel');
+            const title=document.getElementById('accountPanelTitle');
+            const body=document.getElementById('accountPanelBody');
+            const notice=document.getElementById('accountNotice');
+            panel.hidden=false; title.textContent=type==='admin'?'Admin Panel':'User Panel';
+            notice.style.display='block';
+            notice.textContent=type==='admin'?'DEMO ONLY: This is not a secure admin login. Do not enter real passwords or sensitive data. A production admin panel must use server-side authentication and role checks.':'Frontend demo: account data is stored only in this browser. This is not a real account or secure login.';
+            if(type==='admin'){
+                body.innerHTML=`<div class="upgrade-panel"><h3 class="font-bold text-saffron mb-2">Platform overview</h3><p class="text-sm text-slate-300">39 listed modules</p><p class="text-sm text-slate-300">${getFavorites().length} favorites on this browser</p></div><div class="upgrade-panel"><h3 class="font-bold mb-2">Admin roadmap</h3><ul class="text-sm text-slate-300 list-disc pl-5 space-y-1"><li>Server-side admin authentication</li><li>Role-based permissions</li><li>Audit logs and service controls</li><li>Secure database integration</li></ul></div>`;
+            } else {
+                body.innerHTML=`<div class="upgrade-panel"><h3 class="font-bold text-saffron mb-2">Your quick links</h3><p class="text-sm text-slate-300 mb-3">Saved services: ${getFavorites().length}</p><button class="upgrade-btn" onclick="showFavorites()">View saved services</button></div><div class="upgrade-panel"><h3 class="font-bold mb-2">Account setup</h3><label for="displayName" class="block text-xs text-slate-300 mb-1">Display name (local demo)</label><input id="displayName" maxlength="40" class="w-full rounded-xl bg-slate-950 border border-white/20 p-3 text-sm text-white" placeholder="Enter display name"><button class="upgrade-btn mt-3" onclick="saveDisplayName()">Save on this device</button><p id="savedName" class="text-xs text-emerald-300 mt-2"></p></div>`;
+                const saved=localStorage.getItem('virat_display_name_v1')||''; document.getElementById('displayName').value=saved;
+            }
+            panel.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+        function closeAccountPanel(){ document.getElementById('accountPanel').hidden=true; }
+        function saveDisplayName(){ const input=document.getElementById('displayName'); const name=input.value.trim().slice(0,40); localStorage.setItem('virat_display_name_v1',name); document.getElementById('savedName').textContent=name?`Saved on this device: ${name}`:'Name cleared.'; }
+        function showFavorites(){ const ids=getFavorites(); const names=masterToolsData.filter(t=>ids.includes(t.id)).map(t=>t.name); alert(names.length?'Saved services:\n'+names.join('\n'):'No saved services yet. Tap ☆ Save on a module card.'); }
+
+        function renderTools() {
+            const grid = document.getElementById('toolsGrid');
+            grid.innerHTML = '';
+
+            const searchInput = document.getElementById('googleSearchInput').value.toLowerCase();
+
+            const filtered = masterToolsData.filter(tool => {
+                const matchesFilter = currentFilter === 'all' || tool.category === currentFilter;
+                const matchesSearch = tool.name.toLowerCase().includes(searchInput) || tool.desc.toLowerCase().includes(searchInput);
+                return matchesFilter && matchesSearch;
+            });
+
+            filtered.forEach(tool => {
+                const card = document.createElement('div');
+                card.className = 'glass-panel p-4 rounded-2xl glass-card-hover cursor-pointer space-y-2 text-center group service-card';
+                card.onclick = () => openModal(tool.name, tool.desc);
+                card.innerHTML = `
+                    <div class="w-10 h-10 mx-auto rounded-xl bg-white/10 group-hover:bg-saffron/20 group-hover:text-saffron transition flex items-center justify-center text-slate-200">
+                        <i data-lucide="${tool.icon}" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xs text-white group-hover:text-saffron transition">${tool.name}</h4>
+                        <p class="text-[10px] text-slate-300 font-medium mt-0.5">${tool.desc}</p>
+                    </div>
+                    <button type="button" class="upgrade-btn !py-1 !px-2 !text-[10px]" aria-label="Save ${tool.name}" onclick="event.stopPropagation();toggleFavorite(${tool.id})">${isFavorite(tool.id) ? '★ Saved' : '☆ Save'}</button>
+                `;
+                grid.appendChild(card);
+            });
+
+            lucide.createIcons();
+        }
+
+        function setFilter(cat, ev) {
+            currentFilter = cat;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.className = 'filter-btn font-display uppercase tracking-wider px-3.5 py-1.5 rounded-xl text-xs font-bold glass-panel text-slate-300 hover:text-white';
+            });
+            (ev && ev.currentTarget ? ev.currentTarget : document.querySelector('.filter-btn')).className = 'filter-btn font-display uppercase tracking-wider px-3.5 py-1.5 rounded-xl text-xs font-bold bg-saffron text-slate-950 shadow';
+            renderTools();
+        }
+
+        function filterTools() {
+            renderTools();
+        }
+
+        function openModal(title, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            const modal = document.getElementById('toolModal');
+            const content = document.getElementById('modalContent');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
+        }
+
+        function launchModule(){
+            const title=document.getElementById('modalTitle').innerText;
+            const destinations={
+                'V Maps':'https://www.openstreetmap.org/', 'V Search':'https://www.google.com/',
+                'Government':'https://www.myscheme.gov.in/', 'V Career':'https://www.ncs.gov.in/',
+                'Citizen Problem Hub':'https://pgportal.gov.in/', 'VIRAT CSC':'https://register.csc.gov.in/',
+                'Agriculture':'https://agmarknet.gov.in/', 'Health':'https://www.mohfw.gov.in/',
+                'News':'https://www.newsonair.gov.in/'
+            };
+            if(title==='INSTANT PAY'){
+                closeModal(); alert('INSTANT PAY is currently a demo only. No money is collected or transferred. A verified payment gateway and secure backend are required before real payments.'); return;
+            }
+            if(title==='VIRAT AI'){
+                closeModal(); alert('VIRAT AI interface is a planned module. Connect a secure AI API through a backend before enabling live AI.'); return;
+            }
+            if(destinations[title]){ window.open(destinations[title], '_blank', 'noopener,noreferrer'); closeModal(); return; }
+            closeModal(); alert(title+' is listed in the VIRAT roadmap. Its full service has not been connected yet.');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('toolModal');
+            const content = document.getElementById('modalContent');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function scrollToTools() {
+            document.getElementById('all-tools').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        renderTools();
+    </script>
 </body>
 </html>
